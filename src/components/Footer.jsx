@@ -8,12 +8,56 @@ import { useNavigate } from 'react-router-dom';
 import Logo from './Logo';
 import SocialMedia from './SocialMedia';
 
+import nrAgarwalLogo from '../assets/companies/nrAgarwalLogo.jpg';
+import sabarmatiLogo from '../assets/companies/sabarmatiLogo.jpg';
+import sudarshanLogo from '../assets/companies/sudarshanLogo.jpg';
+import threeMLogo from '../assets/companies/threeMLogo.jpg';
+import tirthakPaperLogo from '../assets/companies/tirthakPaperLogo.jpg';
+
 const Footer = () => {
   const navigate = useNavigate();
 
   const handleReadMoreDisclaimerClick = () => {
     navigate(`/disclaimer`);
   };
+
+  const dealershipCompanies = [
+    {
+      logo: nrAgarwalLogo,
+      name: <>
+        <div>N R AGARWAL</div>
+        <div>INDUSTRIES LIMITED</div>
+      </>,
+    },
+    {
+      logo: sabarmatiLogo,
+      name: <>
+        <div>SABARMATI</div>
+        <div>PAPERS.COM</div>
+      </>,
+    },
+    {
+      logo: sudarshanLogo,
+      name: <>
+        <div>SUDARSHAN</div>
+        <div>PAPER & PRODUCTS</div>
+      </>,
+    },
+    {
+      logo: threeMLogo,
+      name: <>
+        <div>THREE M PAPER</div>
+        <div>BOARDS LIMITED</div>
+      </>,
+    },
+    {
+      logo: tirthakPaperLogo,
+      name: <>
+        <div>TIRTHAK PAPER MILL</div>
+        <div>PRIVATE LIMITED</div>
+      </>,
+    }
+  ];
 
   const disclaimerSection = <>
     <div className="pl-10">
@@ -24,54 +68,10 @@ const Footer = () => {
       <p>
         If you do not agree to this, you may not access or otherwise use the website.
       </p>
-      <button className="mt-3 rounded-md bg-custom-secondary text-custom-primary px-2 py-1 font-medium" onClick={handleReadMoreDisclaimerClick}>
+      <button className="mt-3 rounded-md bg-custom-secondary text-custom-primary px-2 py-1 font-medium hover:text-white hover:cursor-pointer" onClick={handleReadMoreDisclaimerClick}>
         Read More
       </button>
     </div>
-  </>;
-
-  const linksMap = [
-    {
-      url: 'https://incometaxindia.gov.in/Pages/default.aspx',
-      name: 'Income Tax Department'
-    },
-    {
-      url: 'https://incometaxindia.gov.in/Pages/default.aspx',
-      name: 'Central Board of Excise and Customs'
-    },
-    {
-      url: 'https://incometaxindia.gov.in/Pages/default.aspx',
-      name: 'E-Tax Information Network'
-    },
-    {
-      url: 'https://incometaxindia.gov.in/Pages/default.aspx',
-      name: 'Ministry of Corporate Affairs'
-    },
-    {
-      url: 'https://www.epfindia.gov.in/site_en/index.php',
-      name: 'Employees Provident Fund'
-    }
-  ];
-
-  const sectionUsefulLinks = <>
-    <ul className="list-disc pl-5">
-      {
-        _.map(linksMap, link => {
-          const {
-            url = '',
-            name = ''
-          } = link;
-
-          return (
-            <li key={name} className="flex flex-col pl-5 text-wrap items-start hover:ml-2 focus:ml-2 focus:shadow-lg transition-all duration-300 my-2 hover:font-bold hover:text-custom-secondary">
-              <a href={url} target="_blank" rel="noreferrer">
-                {name}
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
   </>;
 
   const linksData = [
@@ -141,14 +141,12 @@ const Footer = () => {
 
   const sectionDetails = [
     {
+      key: 'discalimer',
       title: 'DISCLAIMER',
       content: disclaimerSection
     },
     {
-      title: 'USEFUL LINKS',
-      content: sectionUsefulLinks
-    },
-    {
+      key: 'contact_us',
       title: 'CONTACT US',
       content: contactUsSection
     }
@@ -156,11 +154,13 @@ const Footer = () => {
 
   const sectionContent = (section = {}) => {
     const {
-      content = <></>
+      content = <></>,
+      key = ''
     } = section;
 
+    const basis = key === 'contact_us' ? 'basis-2/3' : 'basis-1/3';
     return (
-      <div className="text-md font-light my-3 basis-1/3">
+      <div className={ `text-md font-light my-3 ${basis}` }>
         {content}
       </div>
     );
@@ -179,24 +179,43 @@ const Footer = () => {
   };
 
   const companyDetails = (
-    <div>
-      <div className="pb-5">
-        R J Gala & Associate's purpose is to serve its clients through combined resources, information and expertise and ensure to achieve the highest standards of service to our clients.
+    <div className="text-custom-tertiary">
+      <div className="flex flex-col pb-3">
+        <div className="flex justify-center font-bold">
+          Stockist and Cutting Center for
+        </div>
+        <div className="flex justify-center font-bold">
+          Imported & Local FBB / SBS / C2S / Bible Paper
+        </div>
       </div>
-      <div>
-        We are a young and dynamic firm equipped with an experienced team of chartered accountants and it is located at Mumbai.
+      <div className="flex flex-col py-3">
+        <div className="flex justify-center mx-10 border-t-2 border-t-black py-3 font-bold">
+          Authorised Dealer of Greyback / Whiteback for
+        </div>
+        <div className="flex justify-between">
+          {
+            _.map(dealershipCompanies, company => {
+              return (
+                <div className="mx-5">
+                  <img width="100px" className="bg-white mb-5" src={ company.logo } />
+                  <div className="text-xs font-bold">{ company.name }</div>
+                </div>
+              );
+            })
+          }
+        </div>
       </div>
     </div>
   );
 
   return (
     <footer className="bg-custom-tertiary text-white border-t">
-      <div className="flex p-10">
-        <div className="flex flex-col basis-2/5 justify-start px-10 py-5">
+      <div className="flex p-5">
+        <div className="flex flex-col basis-1/2 justify-start p-5 bg-white">
           <Logo />
-          <div className="pt-4 text-lg">{ companyDetails }</div>
+          <div className="text-lg">{ companyDetails }</div>
         </div>
-        <div className="flex basis-3/5">
+        <div className="flex basis-1/2">
           <div className="flex flex-col ">
             <div className="flex">
               {
@@ -212,7 +231,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex justify-center border-t border-b p-16">
-        &copy; 2023 My React App. All rights reserved.
+        &copy; 2024 PAPTECH CORP PVT. LTD. All rights reserved.
       </div>
     </footer>
   );

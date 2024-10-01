@@ -1,11 +1,10 @@
 const Quote = ({ icon, iconColor, message }) => {
   return (
     <div className="flex items-center justify-center p-10">
-      <div className={ `text-${iconColor}` }>
+      <div className={ `text-${iconColor} mx-10` }>
         { icon }
       </div>
-      <icon size={ 50 } className="mx-10 text-yellow-400"/>
-      <div className="font-bold text-xl text-blue-950">
+      <div className="font-medium text-xl text-custom-pastel-blue">
         { `- "${message}."` }
       </div>
     </div>

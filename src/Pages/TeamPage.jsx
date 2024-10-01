@@ -87,11 +87,11 @@ const Team = () => {
     <div className="border pb-5">
       <h2 className="flex py-2 px-5 text-xl font-medium justify-start text-custom-secondary">FOUNDER'S PROFILE</h2>
       <div className="flex">
-        <div className="flex px-5 flex-col basis-2/6 justify-center">
+        <div className="flex flex-col px-5 basis-2/6 justify-center">
           <img alt="profile pic" src={ rahul } />
           <h2 className="flex justify-center text-lg font-bold text-custom-primary">RAHUL J GALA</h2>
         </div>
-        <div className="base-1/6 pl-5 flex flex-col justify-center">
+        <div className="flex flex-col base-1/6 pl-5 justify-center">
           <ul className="list-disc ml-5 pb-5">
             <li>Chartered Accountant (ICAI)</li>
             <li>Certified  in GST course (ICAI)</li>
