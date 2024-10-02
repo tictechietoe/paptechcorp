@@ -3,10 +3,13 @@ import React from 'react';
 import _ from 'lodash';
 import { CgWebsite } from "react-icons/cg";
 import { FaPhoneAlt } from "react-icons/fa";
-import { MdOutlineMailOutline } from "react-icons/md";
+import { MdAttachEmail } from "react-icons/md";
 import { useNavigate } from 'react-router-dom';
 import Logo from './Logo';
 import SocialMedia from './SocialMedia';
+
+import { RiHomeOfficeFill } from "react-icons/ri";
+import { AiFillCustomerService } from "react-icons/ai";
 
 import nrAgarwalLogo from '../assets/companies/nrAgarwalLogo.jpg';
 import sabarmatiLogo from '../assets/companies/sabarmatiLogo.jpg';
@@ -74,67 +77,51 @@ const Footer = () => {
     </div>
   </>;
 
-  const linksData = [
-    {
-      symbol: <CgWebsite size={30} />,
-      value: <>
-        <a
-          href="https://www.rjgca.in"
-          target="_blank"
-          rel="noreferrer"
-        >
-          www.rjgca.in
-        </a>
-      </>,
-      key: "website"
-    },
-    {
-      symbol: <FaPhoneAlt size={30} />,
-      value: <>
-        <div><a href="tel:9372597268">+91 9372597268</a></div>
-      </>,
-      key: "contact"
-    },
-    {
-      symbol: <FaPhoneAlt size={30} />,
-      value: <>
-        <div><a href="tel:9022573304">+91 9022573304</a></div>
-      </>,
-      key: "contact"
-    },
-    {
-      symbol: <MdOutlineMailOutline size={30} />,
-      value: <>
-        <a
-          href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=connect@rjgca.in"
-          target="_blank"
-          rel="noreferrer"
-        >
-          connect@rjgca.in
-        </a>
-      </>,
-      key: "email"
-    }
-  ];
+  const headerSymbol = (header, symbol) => (
+    <div className="flex items-center">
+      <div className="mx-2">{ symbol }</div>
+      <div className="mx-2">{ header }</div>
+    </div>
+  );
 
   const contactUsSection = <>
-    <div>
-      {
-        _.map(linksData, link => {
-          const {
-            symbol = <></>,
-            value = <></>,
-            key = ""
-          } = link;
-
-          return (
-            <div key={key} className="flex justify-start items-center pl-10 p-2 hover:ml-2 focus:ml-2 focus:shadow-lg transition-all duration-300 my-2 hover:font-bold hover:text-custom-secondary">
-              <div className="px-2">{symbol}</div>
-              <div className="px-2">{value}</div>
-            </div>
-          );
-        })
-      }
+    <div className="px-5">
+      <div className="grid grid-rows-4">
+        <div className="flex items-start justify-between">
+          { headerSymbol('WEBSITE', <CgWebsite />) }
+          <a
+            href="https://www.paptechcorp.in"
+            target="_blank"
+            rel="noreferrer"
+            className="w-60"
+          >
+            www.paptechcorp.in
+          </a>
+        </div>
+        <div className="flex items-start justify-between">
+          { headerSymbol('SALES TEL.', <AiFillCustomerService />) }
+          <div className="flex flex-col w-60">
+            <div><a href="tel:02249615770">022 49615770</a></div>
+            <div><a href="tel:7738463016">+91 7738463016</a></div>
+          </div>
+        </div>
+        <div className="flex items-start justify-between">
+          { headerSymbol('ACCOUNTS TEL.', <FaPhoneAlt />) }
+          <div className="w-60"><a href="tel:7738463018">+91 7738463018</a></div>
+        </div>
+        <div className="flex items-start justify-between">
+          { headerSymbol('EMAIL', <MdAttachEmail />) }
+          <div className="flex flex-col w-60">
+            <div>accounts@paptechcorp.in</div>
+            <div>godown@paptechcorp.in</div>
+            <div>indenting@paptechcorp.in</div>
+          </div>
+        </div>
+        <div className="flex items-start justify-between">
+          { headerSymbol('OFFICE', <RiHomeOfficeFill />) }
+          <div className="w-60">G-5, Raghuleela maega mall, Behind Poisar Depot, Kandivali (West), Mumbai - 400067.</div>
+        </div>
+      </div>
       <SocialMedia />
     </div>
   </>;
@@ -188,7 +175,7 @@ const Footer = () => {
           Imported & Local FBB / SBS / C2S / Bible Paper
         </div>
       </div>
-      <div className="flex flex-col py-3">
+      <div className="flex flex-col pt-3">
         <div className="flex justify-center mx-10 border-t-2 border-t-black py-3 font-bold">
           Authorised Dealer of Greyback / Whiteback for
         </div>
@@ -211,7 +198,7 @@ const Footer = () => {
   return (
     <footer className="bg-custom-tertiary text-white border-t">
       <div className="flex p-5">
-        <div className="flex flex-col basis-1/2 justify-start p-5 bg-white">
+        <div className="flex flex-col basis-1/2 justify-start p-5 my-10 bg-white">
           <Logo />
           <div className="text-lg">{ companyDetails }</div>
         </div>

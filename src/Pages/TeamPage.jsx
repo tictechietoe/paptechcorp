@@ -153,6 +153,7 @@ const Team = () => {
       <Quote
         icon={ <FaPeopleGroup size={ 50 } /> }
         iconColor="custom-secondary"
+        textColor="custom-primary"
         message="The strength of a team is each individual member, the strength of each member is the team"
       />
       <div className="px-10">

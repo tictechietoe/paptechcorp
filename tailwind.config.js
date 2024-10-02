@@ -20,6 +20,9 @@ module.exports = {
         '2': 2,
         '3': 3,
         // Add more values as needed
+      },
+      boxShadow: {
+        'elevation': '0 8px 16px rgba(0, 0, 0, 0.2), 0 -8px 16px rgba(0, 0, 0, 0.2), 8px 0 16px rgba(0, 0, 0, 0.2), -8px 0 16px rgba(0, 0, 0, 0.2)',
       }
     },
   },

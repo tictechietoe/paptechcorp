@@ -10,7 +10,9 @@ const CountingNumbers = ({ targetNumber, duration }) => {
       const entry = entries[0];
       if (entry.isIntersecting) {
         setIsInView(true);
-        observer.unobserve(counterRef.current); // Stop observing after entering view
+      } else {
+        setIsInView(false);
+        setCount(0); // Reset the count when out of view
       }
     });
 
@@ -34,14 +36,14 @@ const CountingNumbers = ({ targetNumber, duration }) => {
     const interval = setInterval(() => {
       currentCount += incrementValue;
       if (currentCount >= targetNumber) {
-        setCount(targetNumber); // Ensures it stops exactly at the target number
-        clearInterval(interval); // Stop the interval when the target is reached
+        setCount(targetNumber); // Stop at the target number
+        clearInterval(interval); // Clear interval when the target is reached
       } else {
-        setCount(Math.round(currentCount)); // Update the count state
+        setCount(Math.round(currentCount)); // Update the count
       }
-    }, 100); // Updates every 100ms
+    }, 100); // Update every 100ms
 
-    return () => clearInterval(interval);
+    return () => clearInterval(interval); // Clean up the interval
   }, [isInView, targetNumber, duration]);
 
   return (

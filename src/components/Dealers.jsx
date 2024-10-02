@@ -25,35 +25,39 @@ const Dealers = () => {
         <div>JK PAPER LTD</div>
         <div>INDUSTRIES LIMITED</div>
         <div>Odhisa [ India ]</div>
-        <img width="35px" className="mt-1 border-2 border-black" src={ indiaLogo } />
+        <img alt="india flag logo" width="35px" className="mt-1 border-2 border-black" src={ indiaLogo } />
       </>,
+      alternative: 'jk paper limited industries limited logo',
     },
     {
       image: itcLogo,
       name: <>
-        <div>SABARMATI</div>
-        <div>PAPERS.COM</div>
+        <div>ITC</div>
+        <div>PVT LTD COMPANY</div>
         <div>Telangana [ India ]</div>
-        <img width="35px" className="mt-1 border-2 border-black" src={ indiaLogo } />
+        <img alt="india flag logo" width="35px" className="mt-1 border-2 border-black" src={ indiaLogo } />
       </>,
+      alternative: 'itc pvt ltd company logo',
     },
     {
       image: centuryLogo,
       name: <>
         <div>CENTURY PULP & PAPER</div>
-        <div>PAPER & PRODUCTS</div>
+        <div>PRODUCTS COMPANY</div>
         <div>Andhra Pradesh [ India ]</div>
-        <img width="35px" className="mt-1 border-2 border-black" src={ indiaLogo } />
+        <img alt="india flag logo" width="35px" className="mt-1 border-2 border-black" src={ indiaLogo } />
       </>,
+      alternative: 'ccentury pulp and paper products company logo',
     },
     {
       image: appLogo,
       name: <>
-        <div>ASIA PUP & PAPER COMPANY</div>
+        <div>ASIA PULP & PAPER COMPANY</div>
         <div>SINAR MAS GROUP*</div>
         <div>Jakarta [ Indonesia ]</div>
-        <img width="35px" className="mt-1 border-2 border-black" src={ indonesiaLogo } />
+        <img allt="indonesia flag logo" width="35px" className="mt-1 border-2 border-black" src={ indonesiaLogo } />
       </>,
+      alternative: 'asia pulp and paper company logo',
     },
     {
       image: cmpcLogo,
@@ -61,8 +65,9 @@ const Dealers = () => {
         <div>CMPC</div>
         <div>PULP & PAPER COMPANY*</div>
         <div>Santiago [ Chile ]</div>
-        <img width="35px" className="mt-1 border-2 border-black" src={ chileLogo } />
+        <img alt="chile flag logo" width="35px" className="mt-1 border-2 border-black" src={ chileLogo } />
       </>,
+      alternative: 'cmpc pulp and paper company logo',
     }
   ];
 
@@ -73,6 +78,7 @@ const Dealers = () => {
         <div>N R AGARWAL</div>
         <div>INDUSTRIES LIMITED</div>
       </>,
+      alternative: 'nr agarwal industires limited logo',
     },
     {
       image: sabarmatiLogo,
@@ -80,6 +86,7 @@ const Dealers = () => {
         <div>SABARMATI</div>
         <div>PAPERS.COM</div>
       </>,
+      alternative: 'sabarmati papers.com logo',
     },
     {
       image: sudarshanLogo,
@@ -87,6 +94,7 @@ const Dealers = () => {
         <div>SUDARSHAN</div>
         <div>PAPER & PRODUCTS</div>
       </>,
+      alternative: 'sudarshan paper and products logo',
     },
     {
       image: threeMLogo,
@@ -94,6 +102,7 @@ const Dealers = () => {
         <div>THREE M PAPER</div>
         <div>BOARDS LIMITED</div>
       </>,
+      alternative: 'three m boards limited logo',
     },
     {
       image: tirthakPaperLogo,
@@ -101,6 +110,7 @@ const Dealers = () => {
         <div>TIRTHAK PAPER MILL</div>
         <div>PRIVATE LIMITED</div>
       </>,
+      alternative: 'tirthak paper mill private limited logo',
     }
   ];
 
@@ -120,7 +130,7 @@ const Dealers = () => {
             _.map(partnershipData, partner => {
               return (
                 <div className="flex flex-col items-center">
-                  <img width="300px" className="p-10 hover:p-2" src={ partner.image } />
+                  <img alt={ partner.alternative } width="300px" className="p-10 hover:p-2" src={ partner.image } />
                   <div className="text-csutom-primary text-lg font-bold flex flex-col items-center">{ partner.name } </div>
                 </div>
               );
@@ -143,7 +153,7 @@ const Dealers = () => {
             _.map(dealershipData, dealer => {
               return (
                 <div className="flex flex-col items-center">
-                  <img width="300px" className="p-10 hover:p-2" src={ dealer.image } />
+                  <img alt={ dealer.alternative } width="300px" className="p-10 hover:p-2" src={ dealer.image } />
                   <div className="text-csutom-primary text-lg font-bold flex flex-col items-center">{ dealer.name } </div>
                 </div>
               );
