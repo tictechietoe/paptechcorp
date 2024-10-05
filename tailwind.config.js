@@ -11,7 +11,7 @@ module.exports = {
         'custom-secondary': '#e0a965',
         'custom-tertiary': '#13161d',
         'custom-back': '#333333',
-        'custom-nav-color': '#fcfcfc',
+        'custom-nav-color': '#fcf9f5',
         'custom-mark-color': '#e23e4e',
         'custom-pastel-blue': '#51A8B1',
       },
@@ -22,8 +22,10 @@ module.exports = {
         // Add more values as needed
       },
       boxShadow: {
-        'elevation': '0 8px 16px rgba(0, 0, 0, 0.2), 0 -8px 16px rgba(0, 0, 0, 0.2), 8px 0 16px rgba(0, 0, 0, 0.2), -8px 0 16px rgba(0, 0, 0, 0.2)',
-      }
+        'elevation-md': '0 2px 4px rgba(0, 0, 0, 0.1), 0 -2px 4px rgba(0, 0, 0, 0.1), 2px 0 4px rgba(0, 0, 0, 0.1), -2px 0 4px rgba(0, 0, 0, 0.1)',
+        'elevation-lg': '0 4px 8px rgba(0, 0, 0, 0.1), 0 -4px 8px rgba(0, 0, 0, 0.1), 4px 0 8px rgba(0, 0, 0, 0.1), -4px 0 8px rgba(0, 0, 0, 0.1)',
+        'elevation-xl': '0 8px 16px rgba(0, 0, 0, 0.2), 0 -8px 16px rgba(0, 0, 0, 0.2), 8px 0 16px rgba(0, 0, 0, 0.2), -8px 0 16px rgba(0, 0, 0, 0.2)',
+      },
     },
   },
   variants: {

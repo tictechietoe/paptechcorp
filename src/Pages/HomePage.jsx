@@ -12,6 +12,10 @@ import helping from '../assets/images/helping.jpg';
 import Badges from '../components/Badges.jsx';
 import AboutUs from '../components/AboutUs.jsx';
 import Quote from '../components/Quote.jsx';
+import Products from '../components/Products.jsx';
+import Applications from '../components/Applications.jsx';
+import ServiceCenter from '../components/ServiceCenter.jsx';
+import TechnologicalInnovations from '../components/TechnologicalInnovations.jsx';
 
 import { FaInfinity } from "react-icons/fa6";
 
@@ -44,9 +48,13 @@ const Home = () => {
         message="Paper may be thin, but it can build strong bridges between businesses and their customers. Similarly Relationships in bussiness are like well-crafted paper, require care, attention, and a foundation of trust."
       />
       <AboutUs />
+      <Products />
+      <Applications />
       <Dealers />
       <Success />
+      <ServiceCenter />
       <Badges />
+      <TechnologicalInnovations />
     </div>
   );
 };

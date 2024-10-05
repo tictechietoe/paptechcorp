@@ -4,7 +4,6 @@ import _ from 'lodash';
 import Quote from '../components/Quote.jsx';
 
 import {
-  FaTruckLoading,
   FaAward
 } from "react-icons/fa";
 import { PiCubeTransparentLight } from "react-icons/pi";
@@ -12,10 +11,9 @@ import { MdSpeed } from "react-icons/md";
 import { GiReceiveMoney } from "react-icons/gi";
 import {
   FaRegHandshake,
-  FaDharmachakra
+  FaDharmachakra,
+  FaTruckFast
 } from "react-icons/fa6";
-
-
 
 const Success = () => {
 
@@ -58,7 +56,7 @@ const Success = () => {
         SECRET INGRIDIENTS OF OUR SERVICE
       </div>
       <Quote
-        icon={ <FaTruckLoading size={ 75 } /> }
+        icon={ <FaTruckFast size={ 75 } /> }
         iconColor="white"
         textColor="custom-pastel-blue"
         message="Service is not a department, it's an attitude that echoes through every aspect of business"
@@ -67,8 +65,8 @@ const Success = () => {
         {
           _.map(successData, success => {
             return (
-              <div className="group relative flex flex-col items-center m-5 p-5 shadow-md shadow-custom-secondary">
-                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-white to-custom-secondary bg-[length:0%_100%] bg-no-repeat group-hover:bg-[length:100%_100%] transition-all duration-[1500ms] ease-out"></div>
+              <div className="group relative flex flex-col items-center m-5 p-5 shadow-elevation-md shadow-custom-secondary">
+                <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-white to-custom-secondary bg-[length:0%_100%] bg-no-repeat group-hover:bg-[length:100%_100%] transition-all duration-[700ms] ease-out"></div>
                 <div className="text-custom-secondary p-2">{ success.icon }</div>
                 <div className="text-white font-bold text-xl p-2 hover:text-custom-pastel-blue">{ success.title }</div>
                 <div className="text-gray-400 text-wrap flex text-center">{ success.description }</div>
