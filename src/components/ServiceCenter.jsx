@@ -1,5 +1,4 @@
 import React from 'react';
-import _ from 'lodash';
 import pasaban from '../assets/images/pasaban.jpeg';
 import gsmTesting from '../assets/images/gsmTesting.jpg';
 
@@ -13,7 +12,7 @@ const ServiceCenter = () => {
       <div className="flex flex-col">
         <div className="grid grid-rows-1 grid-cols-5 p-5">
           <div className="col-span-3">
-            <img className="border-2 rounded-2xl" src={ pasaban } />
+            <img alt="pasaban alternate" className="border-2 rounded-2xl" src={ pasaban } />
           </div>
           <div className="col-span-2 flex flex-col items-center justify-center text-white text-center">
             <div className="font-bold underline my-2 mx-3">ONE OF THE FINEST SHEETING AND SLITING TECHNOLOGY</div>
@@ -36,7 +35,7 @@ const ServiceCenter = () => {
             </div>
           </div>
           <div className="col-span-2">
-            <img className="border-2 border-custom-back rounded-2xl" src={ gsmTesting } />
+            <img alt="gsm lab testing" className="border-2 border-custom-back rounded-2xl" src={ gsmTesting } />
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ module.exports = {
         'custom-secondary': '#e0a965',
         'custom-tertiary': '#13161d',
         'custom-back': '#333333',
+        'custom-back-light': '#cfcccc',
         'custom-nav-color': '#fcf9f5',
         'custom-mark-color': '#e23e4e',
         'custom-pastel-blue': '#51A8B1',

@@ -184,7 +184,7 @@ const Footer = () => {
             _.map(dealershipCompanies, company => {
               return (
                 <div className="mx-5">
-                  <img width="100px" className="bg-white mb-5" src={ company.logo } />
+                  <img alt="company logo" width="100px" className="bg-white mb-5" src={ company.logo } />
                   <div className="text-xs font-bold">{ company.name }</div>
                 </div>
               );

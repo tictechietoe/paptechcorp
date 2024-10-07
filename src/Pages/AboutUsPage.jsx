@@ -3,7 +3,29 @@ import React, { useRef } from 'react';
 import _ from 'lodash';
 import BannerImage from '../components/BannerImage';
 import aboutus from '../assets/images/aboutus.jpg';
-import DividedContainer from '../components/DividedContainer';
+import warehouse from '../assets/images/warehouse.jpg';
+import { FaEye, FaAward } from 'react-icons/fa';
+import { FaTruckFast } from "react-icons/fa6";
+import { PiTipJarBold } from "react-icons/pi";
+import { AiFillProduct } from "react-icons/ai";
+import { PiResizeFill } from "react-icons/pi";
+import { AiOutlineSolution } from "react-icons/ai";
+import { AiOutlineAim } from "react-icons/ai";
+import { TbHours24 } from "react-icons/tb";
+import { VscWorkspaceTrusted } from "react-icons/vsc";
+import { LiaHandshakeSolid } from "react-icons/lia";
+import { GiPodiumWinner } from "react-icons/gi";
+
+
+const CardDiv = ({ message, title, icon }) => {
+  return (
+    <div className="flex flex-col p-10 items-center text-white border-2">
+      <div className="text-custom-secondary mb-5">{ icon }</div>
+      <div className="text-xl font-bold text-custom-priamry mb-5">{ _.upperCase(title) }</div>
+      <div className="text-align text-lg">{ message }</div>
+    </div>
+  );
+};
 
 const AboutUsPage = () => {
 
@@ -13,127 +35,47 @@ const AboutUsPage = () => {
     'what': useRef(null),
   };
 
-  const handleScroll = (event, sectionId) => {
-    event.preventDefault();
-    const section = sectionRefs[sectionId].current;
-
-    if (section) {
-      window.scrollTo({
-        top: section.offsetTop - 100,
-        behavior: 'smooth',
-      });
-    }
-  };
-
-  const aboutUsData = [
+  const qualities = [
     {
-      id: 'who_are_we',
-      title: "WHO ARE WE ?",
-      content: <>
-        <div>
-          <b>R J Gala & Associates</b>, Chartered Accountants is a multi-disciplinary professional firm adding value to the business of the clients in India and around the world.
-        </div>
-      </>,
-      side: 'left',
-      type: 'who',
-      color: 'custom-primary'
+      icon: <FaAward size={ 50 } />,
+      title: 'highest quality',
     },
     {
-      id: 'what_do_we_do',
-      title: "WHAT DO WE DO ?",
-      content: <>
-        <ul className="list-disc ml-5">
-          <li>We recognise that Today's Business World mandates quality professional services that are delivered in a timely and a cost effective manner.</li>
-          <li>We at R J Gala & Associates strive to provide the same to our clients.</li>
-        </ul>
-      </>,
-      side: 'right',
-      color: 'custom-primary'
+      icon: <FaTruckFast size={ 50 } />,
+      title: 'faster delivery',
     },
     {
-      id: 'how_are_we_different',
-      title: "HOW ARE WE DIFFERENT ?",
-      content: <>
-        Our differentiation is derived from a
-        <ul className="list-disc ml-5">
-          <li>rapid performance-based</li>
-          <li>industry-tailored</li>
-          <li>technology-enabled services backed with the highest level of expertise</li>
-        </ul>
-      </>,
-      side: 'left',
-      type: 'how',
-      color: 'custom-mark-color'
+      icon: <PiTipJarBold size={ 50 } />,
+      title: 'affordable pricing',
     },
     {
-      id: 'what_are_our_services',
-      title: "WHAT ARE OUR SERVICES ?",
-      content: <>
-        <div>
-          We provide gamut of services ranging from
-          <ul className="list-disc ml-5">
-            <li><b>Accounting</b></li>
-            <li><b>Taxation consultancy</b></li>
-            <li><b>Audit</b></li>
-            <li><b>Assurance with Valuation to Transaction advisory services</b></li>
-            <li><b>Business Support Services</b></li>
-          </ul>
-        </div>
-      </>,
-      side: 'right',
-      type: 'what',
-      color: 'custom-secondary'
+      icon: <AiFillProduct size={ 50 } />,
+      title: 'variety of products',
     },
     {
-      id: 'what_is_our_belief',
-      title: "WHAT IS OUR BELIEF ?",
-      content: <>
-        <ul className="list-disc ml-5">
-          <li>We believe in putting our client's requirements in fore front at all times.</li>
-          <li>understanding the complexities of their business space and develop solutions in accordance thereof.</li>
-        </ul>
-      </>,
-      side: 'left',
-      color: 'custom-secondary'
+      icon: <PiResizeFill size={ 50 } />,
+      title: 'unlimeted sizes',
     },
     {
-      id: 'what_do_we_provide',
-      title: "WHAT DO WE PROVIDE ?",
-      content: <>
-        <ul className="list-disc ml-5">
-          <li>We are not just service providers to our clients, we are trusted business advisors – because we put our clients at the centre of our business.</li>
-          <li>Our services are driven by quality and commitment to our clients, and responsive quality service is our primary focus.</li>
-        </ul>
-      </>,
-      side: 'right',
-      color: 'custom-secondary'
+      icon: <AiOutlineSolution size={ 50 } />,
+      title: 'customized solutions',
     },
     {
-      id: 'what_do_we_want',
-      title: "WHAT DO WE WANT ?",
-      content: <>
-        <ul className="list-disc ml-5">
-          <li>Close and continuous communication with clients is one of our top priorities.</li>
-          <li>Apart from our people, our greatest assets are the networks and relationships we have nurtured over the years.</li>
-          <li>It helps in facilitating and rendering faster effective solutions to attain <b>maximum client satisfaction</b></li>
-        </ul>
-      </>,
-      side: 'left',
-      color: 'custom-secondary'
+      icon: <AiOutlineAim size={ 50 } />,
+      title: 'customer centric',
     },
     {
-      id: 'what_is_our_purpose',
-      title: "WHAT IS OUR PURPOSE ?",
-      content: <>
-        <ul className="list-disc ml-5">
-          <li>Our purpose is to build trust and solve important problems.</li>
-          <li>In an increasingly complex world, we help intricate systems function, adapt and evolve so they can benefit communities– whether they are tax systems or the economic systems within which business and society exist.</li>
-          <li>We help our clients to make informed decisions and operate effectively within them.</li>
-        </ul>
-      </>,
-      side: 'right',
-      color: 'custom-secondary'
-    }
+      icon: <TbHours24 size={ 50 } />,
+      title: 'always available',
+    },
+    {
+      icon: <VscWorkspaceTrusted size={ 50 } />,
+      title: 'trusted and expericenced',
+    },
+    {
+      icon: <LiaHandshakeSolid size={ 50 } />,
+      title: 'socially responsible',
+    },
   ];
 
   return (
@@ -146,32 +88,54 @@ const AboutUsPage = () => {
         toText="About Us"
       />
       <div>
-        <div className="flex flex-col items-center">
-          <div className="font-bold text-xl text-custom-secondary border-b-2 border-b-custom-secondary">
-            LET'S ANSWER SOME QUESTIONS
-          </div>
-          <div className="flex font-bold text-xl mt-10">
-            <button className="text-custom-primary p-3 m-2 shadow-xl border" onClick={(e) => handleScroll(e, 'who')} >WHO   ?</button>
-            <button className="text-custom-mark-color p-3 m-2 shadow-xl border" onClick={(e) => handleScroll(e, 'how')} >HOW   ?</button>
-            <button className="text-custom-secondary p-3 m-2 shadow-xl border" onClick={(e) => handleScroll(e, 'what')} >WHAT   ?</button>
+        <div className="m-10 p-10 rounded-xl bg-custom-pastel-blue">
+          <div className="grid grid-cols-2">
+            <img src={ warehouse } />
+            <div className="flex flex-col items-center">
+              <div>
+                <div className="flex justify-start">
+                  <div className="rounded-2xl p-2 text-custom-back bg-custom-back-light">About Us</div>
+                </div>
+                <div className="text-3xl font-bold text-custom-back text-center">
+                  PAPTECH CORP PVT. LTD.
+                </div>
+              </div>
+              <div className="flex text-pretty text-xl mt-10 text-white">
+                With over 20 years of experience, Jagdamba Paper Corporation (JPC) is amongst the leading integrated paper trading houses from India. We cater to the requirement of customers in global markets with all grades of paper & paperboard such as Duplex Board, Fluting Medium & Test liner, Kraft Paper, Packaging Board, Newsprint, Printing Paper, Waste Paper etc. We also cater to the customized requirements and offer bespoke solutions as per the customer’s needs. Our relentless focus on Quality, Velocity and Cost makes us the preferred partner to our buyers as well as suppliers alike.
+              </div>
+            </div>
           </div>
         </div>
-        <div className="flex flex-col my-10">
-          {
-            _.map(aboutUsData, data => {
-              return (
-                <div id={ data.id } ref={ sectionRefs[data.type] }>
-                  <DividedContainer
-                    key={ data.id }
-                    questionColor={ data.color }
-                    questionText={ data.title }
-                    questionSide={ data.side }
-                    answerContent={ data.content }
-                  />
-                </div>
-              );
-            })
-          }
+        <div className="p-10 bg-custom-secondary m-10 rounded-2xl">
+          <div className="text-3xl font-bold text-custom-back text-center mb-5">
+            WHY CHOOSE US
+          </div>
+          <div className="grid grid-cols-5 gap-8">
+            {
+              _.map(qualities, quality => {
+                return (
+                  <div className="py-5 flex flex-col items-center text-white bg-custom-back hover:bg-custom-nav-color hover:text-custom-secondary rounded-2xl shadow-elevation-lg">
+                    <div className="m-2">{ quality.icon }</div>
+                    <div className="m-2 font-bold">{ _.upperCase(quality.title) }</div>
+                  </div>
+                );
+              })
+            }
+          </div>
+        </div>
+        <div className="p-10 m-10 bg-custom-back roubnded-2xl">
+          <div className="grid grid-cols-2 gap-8">
+            <CardDiv
+              title="vission"
+              icon={ <FaEye size={ 75 } /> }
+              message="We aspire to be recognized as the most prominent global brand in paper trade, catering to all the applications of our customers. We aim to grow sustainably and proactively deliver solutions in line with the changing global trends in paper requirements for printing and packaging. We also commit to contributing in the conservation of natural resources."
+            />
+            <CardDiv
+              title="mission"
+              message="With a relentless focus on Quality, Velocity and Cost, serve global customers with the best-in-class products and services. Build and operate the most efficient sourcing and logistics process and infrastructure to deliver the best value for money to customers and become their most preferred partners for all kinds of requirements including the customized solutions."
+              icon={ <GiPodiumWinner size={ 75 } /> }
+            />
+          </div>
         </div>
       </div>
     </div>
