@@ -5,81 +5,41 @@ import teamImage from '../assets/images/team.jpg';
 import BannerImage from '../components/BannerImage.jsx';
 import Quote from '../components/Quote.jsx';
 import rahul from '../assets/faces/rahul.jpg';
+
+import ProfileCard from '../components/ProfileCard.jsx';
 import { FaPeopleGroup } from "react-icons/fa6";
-
-const TeamCard = ({ data }) => {
-
-  const {
-    image,
-    designation = '',
-    name = '',
-    expertise = <></>
-  } = data;
-
-  return (
-    <div className="flex bg-white shadow-lg basis-1/4 h-1/2 p-5 mx-5 border">
-      <div className="flex flex-col justify-center">
-        <img alt="team pic" src={ image } />
-        <h2 className="flex justify-center text-lg font-bold text-custom-primary">{ name }</h2>
-        <div className="flex justify-center text-custom-secondary font-medium">{ designation }</div>
-        <div className="flex flex-col">
-          <div className="flex justify-center my-5 text-custom-primary font-bold">Expertise</div>
-          { expertise }
-        </div>
-      </div>
-    </div>
-  );
-};
 
 const Team = () => {
   const [showFounderMoreDetails, setShowFounderMoreDetails] = useState(false);
 
   const teamMembers = [
     {
-      name: "Bhumika Gala",
-      designation: "CA, Bcom",
+      name: "Palak Gala",
+      designation: "Co-founder",
       image: rahul,
-      expertise: <>
-        <ul className="list-disc ml-5 pb-5">
-          <li>Corporate Advisory</li>
-          <li>Business Support Services</li>
-          <li>Fund Raising</li>
-        </ul>
-      </>
+      email: 'email_palak',
+      phone: 'phone_palak',
     },
     {
-      name: "Vinayak Kulkarni (Council Member, ICMA)",
-      designation: "CMA, CIMA(UK), Diploma in IFRS (UK), Advance Diploma in Management Accountant , Bcom",
+      name: "Dwip Gala",
+      designation: "Co-founder",
       image: rahul,
-      expertise: <>
-        <ul className="list-disc ml-5 pb-5">
-          <li>Audit</li>
-          <li>Accounting and Business Support</li>
-          <li>Corporate Advisory</li>
-        </ul>
-      </>
+      email: 'email_dwip',
+      phone: 'phone_dwip',
     },
     {
-      name: "Sameer Negandhi",
-      designation: "CS, Bcom",
+      name: "Rushabh Savla",
+      designation: "Co-founder",
       image: rahul,
-      expertise: <>
-        <ul className="list-disc ml-5 pb-5">
-          <li>Secretarial</li>
-          <li>FEMA Advisory</li>
-          <li>Loan Syndication</li>
-        </ul>
-      </>
+      email: 'email_rushabh',
+      phone: 'phone_rushabh',
     },
     {
-      name: "Sadashiv Kashozal",
-      designation: "CS, Bcom, LLB",
+      name: "Pritesh <Surname>",
+      designation: "Co-founder",
       image: rahul,
-      expertise: <>
-        <ul className="list-disc ml-5 pb-5">
-          <li>Add something</li>
-        </ul>
-      </>
+      email: 'email_pritesh',
+      phone: 'phone_pritesh',
     }
   ];
 
@@ -160,18 +120,11 @@ const Team = () => {
         <div className="my-5">
           We  generate our strength from our team of professionals who have significant functional and industry expertise across services and are well-equipped to deliver outstanding results. Quality of our people is the foundation of our ability to serve our clients in the best way. From our newest staff members through senior staff, exceptional client service represents a dedication to going above and beyond expectations in every working relationship.
         </div>
-        <div className="my-5">
-          Our team is a mix of motivated young professionals and experienced Chartered Accountants, Company Secretaries, Cost Accountants, Lawyers and CFAs who are specialised and has expertise in their respective areas . Expert professionals ensure that our clients receive prompt and personalized solutions at all times and also committed to add value and optimize benefits accruing to the clients.
-        </div>
-        <div className="my-5">
-          Different together. At R J Gala and Associates, we‘re not all the same. And that‘s our greatest strength. It’s important that our workforce reflects the diversity of the people we serve. Hiring people with different backgrounds and points of view helps us make better decisions, deliver outstanding results and create better experiences for everyone.
-        </div>
-        { foundersProfile }
         <div>
           <h2 className="flex py-5 px-5 text-xl font-medium justify-start text-custom-secondary">TEAM OF PROFESSIONALS</h2>
-          <div className="flex mb-10">
+          <div className="grid grid-cols-4 gap-8 p-5">
             {
-              _.map(teamMembers, (member, index) => <TeamCard key={index} data={member} />)
+              _.map(teamMembers, (member, index) => <ProfileCard key={index} data={member} />)
             }
           </div>
         </div>

@@ -38,6 +38,7 @@ const ContactInfo = () => {
       location: '',
       emails: ['accounts@paptechcorp.in', 'godown@paptechcorp.in'],
       contacts: ['9372597268', '9022573304'],
+      src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.5687328262234!2d72.82348707690886!3d18.950474055897928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cfbad044e6e3%3A0x5b2f8515f6b60f83!2sVadhan%20Niwas!5e0!3m2!1sen!2sin!4v1719416541890!5m2!1sen!2sin"
     },
     {
       name: 'Padhga Warehouse',
@@ -45,6 +46,7 @@ const ContactInfo = () => {
       location: '',
       emails: ['accounts@paptechcorp.in', 'godown@paptechcorp.in'],
       contacts: ['9372597268', '9022573304'],
+      src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.5687328262234!2d72.82348707690886!3d18.950474055897928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cfbad044e6e3%3A0x5b2f8515f6b60f83!2sVadhan%20Niwas!5e0!3m2!1sen!2sin!4v1719416541890!5m2!1sen!2sin"
     }
   ];
 
@@ -119,18 +121,18 @@ const ContactInfo = () => {
           }
         </div>
         <div className="p-5">
-          <div className="flex justify-start text-3xl font-bold text-custom-back">OUR OFFICES</div>
+          <div className="flex justify-center text-3xl font-bold text-custom-back">OUR OFFICES</div>
           {
             _.map(officeData, office => {
               return (
-                <div className="p-5">
-                  <div className="grid grid-cols-3 gap-8">
-                    <div className="bg-custom-primary text-white p-4 rounded-lg shadow-lg">
-                      <p className="font-bold">{ office.name }</p>
+                <div className="p-5 grid grid-cols-4">
+                  <div className="grid grid-rows-3 p-5 col-span-1 gap-4">
+                    <div className="bg-custom-primary text-white p-2 rounded-lg shadow-lg">
+                      <p className="font-extrabold underline">{ _.upperCase(office.name) }</p>
                       <p>{ office.location }</p>
                     </div>
-                    <div className="bg-custom-secondary text-white p-4 rounded-lg shadow-lg">
-                      <p className="font-bold">CONTACT NUMBER</p>
+                    <div className="bg-custom-secondary text-white p-2 rounded-lg shadow-lg">
+                      <p className="font-extrabold underline">CONTACT NUMBER</p>
                       {
                         _.map(office.contacts, contact => {
                           return (
@@ -138,25 +140,27 @@ const ContactInfo = () => {
                           );
                         })
                       }
-                      
-                      <div><a href="tel:9022573304">+91 9022573304</a></div>
                     </div>
-                    <div className="bg-custom-mark-color text-white p-4 rounded-lg shadow-lg">
-                      <p className="font-bold">EMAIL</p>
+                    <div className="bg-custom-mark-color text-white p-2 rounded-lg shadow-lg">
+                      <p className="font-extrabold underline">EMAIL</p>
                       {
                         _.map(office.emails, email => {
-                          <a
-                            href={ `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${email}` }
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            { email }
-                          </a>
+                          return (
+                            <div>
+                              <a
+                                href={ `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${email}` }
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                { email }
+                              </a>
+                            </div>
+                          );
                         })
                       }
                     </div>
                   </div>
-                  <div className="my-5 border-4 rounded-2xl">
+                  <div className="m-5 border-4 col-span-3 rounded-2xl">
                     <iframe
                       title="Google Maps Location"
                       src={ office.src }
@@ -171,19 +175,19 @@ const ContactInfo = () => {
             })
           }
         </div>
-        <div className="p-5">
-          <div className="flex justify-start text-3xl font-bold text-custom-back">OUR WAREHOUSES</div>
+        <div className="mt-10 p-5">
+          <div className="flex justify-center text-3xl font-bold text-custom-back">OUR WAREHOUSES</div>
           {
             _.map(warehouseData, warehouse => {
               return (
-                <div className="p-5">
-                  <div className="grid grid-cols-3 gap-8">
-                    <div className="bg-custom-primary text-white p-4 rounded-lg shadow-lg">
-                      <p className="font-bold">{ warehouse.name }</p>
+                <div className="p-5 grid grid-cols-4">
+                  <div className="grid grid-rows-3 p-5 col-span-1 gap-4">
+                    <div className="bg-custom-primary text-white p-2 rounded-lg shadow-lg">
+                      <p className="font-extrabold underline">{ _.upperCase(warehouse.name) }</p>
                       <p>{ warehouse.location }</p>
                     </div>
-                    <div className="bg-custom-secondary text-white p-4 rounded-lg shadow-lg">
-                      <p className="font-bold">CONTACT NUMBER</p>
+                    <div className="bg-custom-secondary text-white p-2 rounded-lg shadow-lg">
+                      <p className="font-extrabold underline">CONTACT NUMBER</p>
                       {
                         _.map(warehouse.contacts, contact => {
                           return (
@@ -192,22 +196,26 @@ const ContactInfo = () => {
                         })
                       }
                     </div>
-                    <div className="bg-custom-mark-color text-white p-4 rounded-lg shadow-lg">
-                      <p className="font-bold">EMAIL</p>
+                    <div className="bg-custom-mark-color text-white p-2 rounded-lg shadow-lg">
+                      <p className="font-extrabold underline">EMAIL</p>
                       {
                         _.map(warehouse.emails, email => {
-                          <a
-                            href={ `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${email}` }
-                            target="_blank"
-                            rel="noreferrer"
-                          >
-                            { email }
-                          </a>
+                          return (
+                            <div>
+                              <a
+                                href={ `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${email}` }
+                                target="_blank"
+                                rel="noreferrer"
+                              >
+                                { email }
+                              </a>
+                            </div>
+                          );
                         })
                       }
                     </div>
                   </div>
-                  <div className="my-5 border-4 rounded-2xl">
+                  <div className="m-5 border-4 col-span-3 rounded-2xl">
                     <iframe
                       title="Google Maps Location"
                       src={ warehouse.src }
