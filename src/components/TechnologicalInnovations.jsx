@@ -5,7 +5,7 @@ import appPgae1 from '../assets/images/appPage1.jpg';
 import appPgae2 from '../assets/images/appPage2.jpg';
 
 const StoreLabel = ({ icon, priamryText, secondaryText }) => (
-  <div className="bg-black flex items-center rounded-2xl p-1 m-2">
+  <div className="bg-black flex justify-center items-center rounded-2xl p-1 m-2">
     <div className="m-1">{ icon }</div>
     <div className="flex flex-col justify-center items-center text-white">
       <div className="text-sm">{ secondaryText }</div>
@@ -23,11 +23,11 @@ const TechnologicalInnovations = () => {
           TECHNOLOGICAL INNOVATIONS
         </div>
         <div className="grid grid-cols-6 gap-8">
-          <div className="col-span-1">
+          <div className="col-span-1 flex flex-col justify-center">
             <div className="mb-5">
               <AppQRCode url="https://qr-codes.io/IFfhew" size={ 175 } />
             </div>
-            <div className="bg-white px-1 rounded-2xl">
+            <div className="bg-white rounded-2xl">
               <div className="flex justify-center text-medium pt-2 text-black font-base">Download The App Now</div>
               <div className="flex flex-col justify-between">
                 <StoreLabel
@@ -43,13 +43,13 @@ const TechnologicalInnovations = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-1 border-2">
+          <div className="col-span-1 flex items-center">
             <img alt="applicaiton page 1" src={ appPgae1 } />
           </div>
-          <div className="col-span-1 border-2">
+          <div className="col-span-1 flex items-center">
             <img alt="applicaiton page 2" src={ appPgae2 } />
           </div>
-          <div className="col-span-3 flex flex-col justify-between">
+          <div className="col-span-3 flex flex-col justify-center">
             <div className="p-5 text-lg">
               At Paptech Corp Pvt. Ltd., we are committed to leveraging the latest technology to enhance operational efficiency and deliver exceptional customer experiences. Our internally developed system optimizes every stage of the process, allowing us to provide real-time updates, seamless tracking, and instant notifications. This ensures transparency and enables customers to stay informed at all times.
             </div>

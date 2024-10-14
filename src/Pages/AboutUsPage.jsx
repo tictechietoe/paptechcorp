@@ -29,12 +29,6 @@ const CardDiv = ({ message, title, icon }) => {
 
 const AboutUsPage = () => {
 
-  const sectionRefs = {
-    'who': useRef(null),
-    'how': useRef(null),
-    'what': useRef(null),
-  };
-
   const qualities = [
     {
       icon: <FaAward size={ 50 } />,
@@ -89,7 +83,7 @@ const AboutUsPage = () => {
       />
       <div>
         <div className="m-10 p-10 rounded-xl bg-custom-pastel-blue">
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-8">
             <img src={ warehouse } />
             <div className="flex flex-col items-center">
               <div>
@@ -100,10 +94,23 @@ const AboutUsPage = () => {
                   PAPTECH CORP PVT. LTD.
                 </div>
               </div>
-              <div className="flex text-pretty text-xl mt-10 text-white">
-                With over 20 years of experience, Jagdamba Paper Corporation (JPC) is amongst the leading integrated paper trading houses from India. We cater to the requirement of customers in global markets with all grades of paper & paperboard such as Duplex Board, Fluting Medium & Test liner, Kraft Paper, Packaging Board, Newsprint, Printing Paper, Waste Paper etc. We also cater to the customized requirements and offer bespoke solutions as per the customer’s needs. Our relentless focus on Quality, Velocity and Cost makes us the preferred partner to our buyers as well as suppliers alike.
+              <div className="my-3 font-semibold text-white">
+                Pap tech Sales Corporation and Prabhat paper mart have merged into Paptech Corp Pvt. Ltd. from FY 2024.
+              </div>
+              <div className="flex text-pretty mt-10 text-white">
+                With over 20 years of experience, Paptech Corp PVT. LTD. is amongst the leading integrated paper trading houses from India. We cater to the requirement of customers in global markets with all grades of paper & paperboard such as Duplex Board, Fluting Medium & Test liner, Kraft Paper, Packaging Board, etc. We also cater to the customized requirements and offer bespoke solutions as per the customer’s needs. Our relentless focus on Quality, Velocity and Cost makes us the preferred partner to our buyers as well as suppliers alike.
               </div>
             </div>
+          </div>
+          <div className="flex justify-center my-10 text-white">
+            <ul className="list-disc ml-5">
+              <li>If you are looking for the best quality paper, paperboard, delivered faster at the most competitive price, you are at the right place.</li>
+              <li>Paptech Corp PVT LTD is a leading integrated trading house and exporter of high quality paper and paperboard from India.</li>
+              <li>We have more than 2 decades of proven credibility in the paper industry and serve customers across the world.</li>
+              <li>We trade in all grades of paper & paperboard such as Duplex Board, Fluting Medium & Test liner, Kraft Paper, Packaging Board, Newsprint, Printing Paper, Waste Paper etc.</li>
+              <li>We also cater to the customized requirements and offer bespoke solutions as per the customer’s needs.</li>
+              <li>Our relentless focus on Quality, Velocity and Cost makes us the preferred partner to our buyers as well as suppliers alike.</li>
+            </ul>
           </div>
         </div>
         <div className="p-10 bg-custom-secondary m-10 rounded-2xl">
@@ -116,7 +123,7 @@ const AboutUsPage = () => {
                 return (
                   <div className="py-5 flex flex-col items-center text-white bg-custom-back hover:bg-custom-nav-color hover:text-custom-secondary rounded-2xl shadow-elevation-lg">
                     <div className="m-2">{ quality.icon }</div>
-                    <div className="m-2 font-bold">{ _.upperCase(quality.title) }</div>
+                    <div className="m-2 font-bold text-center">{ _.upperCase(quality.title) }</div>
                   </div>
                 );
               })

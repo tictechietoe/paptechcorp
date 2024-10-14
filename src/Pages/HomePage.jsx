@@ -9,7 +9,7 @@ import difference from '../assets/images/difference.jpg';
 import helping from '../assets/images/helping.jpg';
 import findingSolutions from '../assets/images/findingSolutions.jpg';
 import warehouse from '../assets/images/warehouse.jpg';
-import workingWarehouse from '../assets/images/workingWarehouse.jpg';
+import forest from '../assets/images/forest.jpg';
 import variety from '../assets/images/variety.jpg';
 
 import Badges from '../components/Badges.jsx';
@@ -25,23 +25,23 @@ import { FaInfinity } from "react-icons/fa6";
 
 const Home = () => {
   const images = [
+    forest,
+    warehouse,
     meeting,
     findingSolutions,
+    variety,
     difference,
     helping,
-    warehouse,
-    workingWarehouse,
-    variety
   ];
 
   const textContent = [
+    'Delivering More Than Paper — Delivering Excellence', // forest
+    'A World of Paper, Tailored to Your Needs', // warehouse
     'Accessable. Approachable. Accountable', // meetng
     'Finding Solutions and not Execuses', // findingSolutions
+    'Quality with Variety', // variety
     'Making a Difference', // difference
     'We Build Relations', // helping
-    'A World of Paper, Tailored to Your Needs', // warehouse
-    'Delivering More Than Paper — Delivering Excellence', // workingWarehouse
-    'Quality with Variety', // variety
   ];
 
   return (

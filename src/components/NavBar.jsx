@@ -2,8 +2,6 @@
 import React from 'react';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
-import { BiSolidShoppingBags } from "react-icons/bi";
-import { AiFillProduct } from "react-icons/ai";
 import { RiTeamFill } from "react-icons/ri";
 import { FaHome, FaWpforms } from "react-icons/fa";
 import { PiPhoneCallFill } from "react-icons/pi";
@@ -28,16 +26,6 @@ const Navbar = () => {
       to: '/team',
       icon: <RiTeamFill size={20} />
     },
-    // {
-    //   title: 'PRODUCTS',
-    //   to: '/products',
-    //   icon: <AiFillProduct size={20} />
-    // },
-    // {
-    //   title: 'APPLICATIONS',
-    //   to: '/applications',
-    //   icon: <BiSolidShoppingBags size={20} />
-    // },
     {
       title: 'CONTACT US',
       to: '/contact',

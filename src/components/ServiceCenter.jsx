@@ -7,7 +7,7 @@ const ServiceCenter = () => {
   return (
     <div className="flex flex-col p-16 bg-custom-secondary shadow-elevation-xl items-center">
       <div className="flex text-3xl text-custom-back font-bold mb-10">
-        PAPTECH SERVICE CENTER
+        PAPTECH QUICK SERVICE CENTERS
       </div>
       <div className="flex flex-col">
         <div className="grid grid-rows-1 grid-cols-5 p-5">

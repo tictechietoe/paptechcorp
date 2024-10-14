@@ -49,7 +49,7 @@ const productsData = [
     image: biblepaper,
     name: 'BIBLE PAPER',
     category: 'woodfree uncoated paper',
-    gsm: '200 - 450 GSM',
+    gsm: '400 GSM',
   },
   {
     id: 'polycoated_board',

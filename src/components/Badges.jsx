@@ -13,7 +13,7 @@ import {
   PiWarehouseFill
 } from "react-icons/pi";
 import { RiBuilding2Fill } from "react-icons/ri";
-import { IoCut } from "react-icons/io5";
+import { FaTruck } from "react-icons/fa";
 import { GrUserWorker } from "react-icons/gr";
 import { SiCloudflareworkers } from "react-icons/si";
 
@@ -50,34 +50,28 @@ const Badges = () => {
 
   const strengthData = [
     {
-      number: 10,
+      number: 100,
       metric: 'MT/Day',
       description: 'Sheeting Capacity',
       icon: <SiCloudflareworkers size={ 75 } />
     },
     {
-      number: 300,
-      metric: 'MT/Day',
-      description: 'Slitting Capacity',
-      icon: <IoCut size={ 75 } />
-    },
-    {
-      number: 5,
-      metric: '',
-      description: 'Total Team Members',
-      icon: <FaPersonRays size={ 75 } />
-    },
-    {
-      number: 200,
+      number: 50,
       metric: '',
       description: 'Total Warehouse workers',
       icon: <GrUserWorker size={ 75 } />
     },
     {
-      number: 50000,
+      number: 80000,
       metric: 'Sqft',
       description: 'Total Warehousing Facility',
       icon: <PiWarehouseFill size={ 75 } />
+    },
+    {
+      number: 10,
+      metric: '',
+      description: 'Delivey Trucks',
+      icon: <FaTruck size={ 75 } />
     },
   ];
 
@@ -103,7 +97,7 @@ const Badges = () => {
       </div>
       <div className="flex flex-col p-10 m-10 bg-custom-back rounded-3xl shadow-elevation-xl">
         <div className="flex justify-center text-3xl font-bold text-custom-secondary">OUR DAILY STRENGTH</div>
-        <div className="grid grid-cols-5">
+        <div className="grid grid-cols-4">
           {
             _.map(strengthData, strength => {
               return (
