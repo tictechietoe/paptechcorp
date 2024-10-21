@@ -1,14 +1,20 @@
 // src/components/Navbar.js
-import React from 'react';
+import React, { useState } from 'react';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import { RiTeamFill } from "react-icons/ri";
-import { FaHome, FaWpforms } from "react-icons/fa";
+import { FaHome, FaWpforms, FaBars, FaTimes } from "react-icons/fa";
 import { PiPhoneCallFill } from "react-icons/pi";
 import Logo from './Logo';
 
 
 const Navbar = () => {
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   const navbarContent = [
     {
@@ -53,15 +59,33 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="flex items-center justify-between sticky top-0 z-30 bg-custom-nav-color drop-shadow-lg">
-      <Logo />
-      <div className="flex flex-col items-center">
-        <div className="flex flex-1 font-medium text-sm flex-wrap">
+    <nav>
+      <div className="flex items-center justify-between sticky top-0 z-30 bg-custom-nav-color drop-shadow-lg">
+        <Logo />
+        <div className="px-10 text-custom-secondary md:hidden lg:hidden">
+          <div
+            className="hover:bg-custom-secondary hover:text-white p-1 curosr-pointer"
+            onClick={ () => setIsMenuOpen(!isMenuOpen) }
+          >
+            <FaBars size={ 20 } />
+          </div>
+        </div>
+        <div className="hidden md:flex lg:flex flex-col items-center">
+          <div className="flex flex-1 font-medium text-sm flex-wrap">
+            {
+              _.map(navbarContent, content => navItem(content))
+            }
+          </div>
+        </div>
+      </div>
+      {
+        isMenuOpen &&
+        <div className="my-5 flex flex-col font-medium text-sm flex-wrap">
           {
             _.map(navbarContent, content => navItem(content))
           }
         </div>
-      </div>
+      }
     </nav>
   );
 };

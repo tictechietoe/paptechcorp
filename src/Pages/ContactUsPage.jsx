@@ -84,15 +84,18 @@ const ContactInfo = () => {
         toText="Contact"
       />
       <div className="flex flex-col">
-        <div className="grid grid-cols-4 gap-4 m-5 p-5 border-2 shadow-elevation-md rounded-2xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 responsive-gap responsive-margin responsive-padding  shadow-elevation-md rounded-2xl">
           {
             _.map(overviewData, overview => {
               return (
-                <div className="flex flex-col justify-center items-center border-2 rounded-2xl hover:bg-custom-nav-color m-2 p-5">
-                  <div className="text-custom-back font-bold text-2xl">{ overview.title }</div>
-                  <div className="text-custom-secondary">{ overview.logo }</div>
-                  <div className="text-custom-primary font-medium text-3xl">
-                    <CountingNumbers targetNumber={ overview.number } duration={ overviewNumbersDuration } />
+                <div className="flex flex-col justify-center items-center rounded-2xl hover:bg-custom-nav-color m-2 p-5 border-2">
+                  <div className="text-custom-back font-bold responsive-title">{ overview.title }</div>
+                  <div className="text-custom-secondary responsive-icon">{ overview.logo }</div>
+                  <div className="text-custom-primary font-medium text-lg md:text-xl lg:text-2xl">
+                    <CountingNumbers
+                      targetNumber={ overview.number }
+                      duration={ overviewNumbersDuration }
+                    />
                   </div>
                   <div className="flex flex-col">
                     {
@@ -104,10 +107,10 @@ const ContactInfo = () => {
             })
           }
         </div>
-        <div className="p-10">
-          <div className="p-10 bg-custom-primary rounded-full shadow-elevation-lg text-custom-secondary flex justify-evenly">
-            <div className="text-lg font-bold">FOR QUALITY GRIVIENCE</div>
-            <div className="text-white font-medium">
+        <div className="responsive-padding">
+          <div className="grid grid-cols-3 place-items-center responsive-gap responsive-padding bg-custom-primary rounded-xl shadow-elevation-lg text-custom-secondary flex justify-evenly">
+            <div className="col-span-1 row-span-2 responsive-text font-bold text-wrap">FOR QUALITY GRIVIENCE</div>
+            <div className="col-span-2 text-white font-medium text-wrap">
               <a
                 href={ `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=indenting@paptechcorp.in` }
                 target="_blank"
@@ -116,20 +119,24 @@ const ContactInfo = () => {
                 Email : indenting@paptechcorp.in
               </a>
             </div>
-            <div className="font-medium text-white"><a href="tel:8879874369">Contact : +91 8879874369</a></div>
+            <div className="col-span-2 font-medium text-white text-wrap">
+              <a href="tel:8879874369">
+                Contact : +91 8879874369
+              </a>
+            </div>
           </div>
         </div>
         <div className="p-5">
-          <div className="flex justify-center text-3xl font-bold text-custom-back">OUR OFFICES</div>
+          <div className="flex justify-center responsive-title font-bold text-custom-back">OUR OFFICES</div>
           {
             _.map(officeData, office => {
               return (
-                <div className="p-5 grid grid-cols-4">
-                  <div className="grid grid-rows-4 p-5 col-span-1 gap-4">
+                <div className="responsive-padding grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 responsive-gap">
+                  <div className="grid grid-rows-4 col-span-1 responsive-gap">
                     <div className="row-span-2 flex flex-col justify-evenly bg-custom-primary text-white p-2 rounded-lg shadow-lg">
                       <p className="font-extrabold">{ _.upperCase(office.name) }</p>
                       <p className="text-custom-secondary font-medium">[ { _.upperCase(office.designation) } ]</p>
-                      <p>{ office.location }</p>
+                      <p className="responsive-text">{ office.location }</p>
                     </div>
                     <div className="bg-custom-secondary text-white p-2 rounded-lg shadow-lg">
                       <p className="font-extrabold">CONTACT NUMBER</p>
@@ -160,7 +167,7 @@ const ContactInfo = () => {
                       }
                     </div>
                   </div>
-                  <div className="m-5 border-4 col-span-3 rounded-2xl">
+                  <div className="m-5 border-4 col-span-1 md:col-span-3 lg:col-span-3 rounded-2xl">
                     <iframe
                       title="Google Maps Location"
                       src={ office.src }
@@ -175,17 +182,19 @@ const ContactInfo = () => {
             })
           }
         </div>
-        <div className="mt-10 p-5">
-          <div className="flex justify-center text-3xl font-bold text-custom-back">OUR WAREHOUSES</div>
+        <div className="mt-10 responsive-padding">
+          <div className="flex justify-center responsive-title font-bold text-custom-back">
+            OUR WAREHOUSES
+          </div>
           {
             _.map(warehouseData, warehouse => {
               return (
-                <div className="p-5 grid grid-cols-4">
-                  <div className="grid grid-rows-4 p-5 col-span-1 gap-4">
+                <div className="responsive-padding grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 responsive-gap">
+                  <div className="grid grid-rows-4 col-span-1 responsive-gap">
                     <div className="row-span-2 bg-custom-primary flex flex-col justify-evenly text-white p-2 rounded-lg shadow-lg">
                       <p className="font-extrabold ">{ _.upperCase(warehouse.name) }</p>
                       <p className="text-custom-secondary font-medium">[ { _.upperCase(warehouse.designation) } ]</p>
-                      <p>{ warehouse.location }</p>
+                      <p className="responsive-text">{ warehouse.location }</p>
                     </div>
                     <div className="bg-custom-secondary text-white p-2 rounded-lg shadow-lg">
                       <p className="font-extrabold ">CONTACT NUMBER</p>
@@ -216,7 +225,7 @@ const ContactInfo = () => {
                       }
                     </div>
                   </div>
-                  <div className="m-5 border-4 col-span-3 rounded-2xl">
+                  <div className="m-5 border-4 col-span-1 md:col-span-3 lg:col-span-3 rounded-2xl">
                     <iframe
                       title="Google Maps Location"
                       src={ warehouse.src }

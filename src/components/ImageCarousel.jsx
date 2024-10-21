@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
-import _ from 'lodash'
+import _ from 'lodash';
 
 const SLIDE_DURATION = 7000;
 const TRANSITION_DURATION = 300;
@@ -80,7 +80,7 @@ const ImageCarousel = ({ images, textContent }) => {
   }, [currentIndex]);
 
   return (
-    <div className="w-full h-[75vh] relative overflow-hidden">
+    <div className="h-[50vh] md:h-[62.5vh] lg:h-[75vh] w-full relative overflow-hidden">
       <div 
         className="flex h-full transition-transform ease-in-out will-change-transform"
         style={{ 
@@ -96,8 +96,8 @@ const ImageCarousel = ({ images, textContent }) => {
                 alt={`Carousel screen ${index}`}
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center p-8">
-                <div className="text-white text-5xl font-bold">
+              <div className="absolute inset-0 bg-black bg-opacity-30 flex items-center justify-center py-8 px-16">
+                <div className="text-xl md:text-3xl lg:text-5xl text-white font-bold">
                   { index === currentIndex ? displayedText : '' }
                   <span className="animate-blink">|</span>
                 </div>
@@ -111,14 +111,14 @@ const ImageCarousel = ({ images, textContent }) => {
         onClick={ prevSlide }
         className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-black p-2 rounded-full hover:bg-opacity-75 transition-all"
       >
-        <FaChevronLeft size={ 50 } />
+        <FaChevronLeft className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
       </button>
 
       <button
         onClick={ nextSlide }
         className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 text-black p-2 rounded-full hover:bg-opacity-95 transition-all"
       >
-        <FaChevronRight size={ 50 } />
+        <FaChevronRight className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12" />
       </button>
 
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
@@ -127,9 +127,7 @@ const ImageCarousel = ({ images, textContent }) => {
             <button
               key={index}
               onClick={ () => changeSlide(index) }
-              className={`w-3 h-3 rounded-full ${
-                index === currentIndex ? 'bg-white' : 'bg-white bg-opacity-50'
-              }`}
+              className={ `w-3 h-3 rounded-full ${index === currentIndex ? 'bg-white' : 'bg-white bg-opacity-50'}` }
             />
           ))
         }

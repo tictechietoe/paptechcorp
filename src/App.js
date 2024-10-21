@@ -18,8 +18,9 @@ import AboutUs from './Pages/AboutUsPage';
 import NoContentPage from './Pages/NoContentPage';
 import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
-
 import WhatsAppButton from './components/WhatsappButton';
+
+import './styles/custom.css';
 
 const App = () => {
 	return (

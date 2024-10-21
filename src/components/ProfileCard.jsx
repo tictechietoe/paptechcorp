@@ -21,12 +21,7 @@ const ProfileCard = ({ data }) => {
         onMouseEnter={ () => setIsHovered(true) }
         onMouseLeave={ () => setIsHovered(false) }
       >
-        <img
-          src={ image }
-          alt={ name }
-          height={ 500 }
-          className="object-cover"
-        />
+        { image }
         <div 
           className={ `absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center p-4 text-white transition-transform duration-300 ease-in-out ${ isHovered ? 'translate-y-0' : '-translate-y-full' }` }
         >

@@ -4,10 +4,10 @@ import _ from 'lodash';
 import teamImage from '../assets/images/team.jpg';
 import BannerImage from '../components/BannerImage.jsx';
 import Quote from '../components/Quote.jsx';
-import rahul from '../assets/faces/rahul.jpg';
 
 import ProfileCard from '../components/ProfileCard.jsx';
 import { FaPeopleGroup } from "react-icons/fa6";
+import { IoIosPerson } from "react-icons/io";
 
 const Team = () => {
 
@@ -15,30 +15,30 @@ const Team = () => {
     {
       name: "Palak Gala",
       designation: "Co Owner",
-      image: rahul,
+      image: <IoIosPerson size={ 200 } className="bg-custom-secondary w-72" />,
       email: 'palak.gala@paptechcorp.in',
       phone: '8879874369',
     },
     {
       name: "Dwip Gala",
       designation: "Co Owner",
-      image: rahul,
+      image: <IoIosPerson size={ 200 } className="bg-custom-secondary w-72" />,
       email: 'dwip.gala@paptechcorp.in',
       phone: '8080609658',
     },
     {
       name: "Rushabh Savla",
       designation: "Co Owner",
-      image: rahul,
+      image: <IoIosPerson size={ 200 } className="bg-custom-secondary w-72" />,
       email: 'rushabh.savla@paptechcorp.in',
-      phone: 'phone_rushabh',
+      phone: '7977264558',
     },
     {
       name: "Pritesh Shah",
       designation: "Co Owner",
-      image: rahul,
+      image: <IoIosPerson size={ 200 } className="bg-custom-secondary w-72" />,
       email: 'Pritesh.shah@paptechcorp.in',
-      phone: 'phone_pritesh',
+      phone: '9820058760',
     }
   ];
 
@@ -62,8 +62,10 @@ const Team = () => {
           We  generate our strength from our team of professionals who have significant functional and industry expertise across services and are well-equipped to deliver outstanding results. Quality of our people is the foundation of our ability to serve our clients in the best way. From our newest staff members through senior staff, exceptional client service represents a dedication to going above and beyond expectations in every working relationship.
         </div>
         <div>
-          <h2 className="flex py-5 px-5 text-xl font-medium justify-start text-custom-secondary">TEAM OF PROFESSIONALS</h2>
-          <div className="grid grid-cols-4 gap-8 p-5">
+          <h2 className="flex p-2 text-xl font-medium justify-start text-custom-secondary">
+            TEAM OF PROFESSIONALS
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 responsive-gap responsive-padding">
             {
               _.map(teamMembers, (member, index) => <ProfileCard key={index} data={member} />)
             }

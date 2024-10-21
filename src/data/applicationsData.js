@@ -12,10 +12,6 @@ import { PiNotebookFill } from "react-icons/pi";
 import { FaWpforms } from "react-icons/fa6";
 
 
-
-
-
-
 const iconSize = 70;
 
 const applicationsData = [
@@ -32,7 +28,7 @@ const applicationsData = [
   {
     id: 'paper_bags_wraps',
     icon: <GiPaperBagFolded size={ iconSize } />,
-    name: 'paper for bags and wraps',
+    name: 'bags and wraps',
   },
   {
     id: 'food_and_beverages',

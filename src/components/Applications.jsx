@@ -1,28 +1,25 @@
 import React from 'react';
 import _ from 'lodash';
-import { useNavigate } from 'react-router-dom';
 import applicationsData from '../data/applicationsData';
 
 const Applications = () => {
-  const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col p-16 bg-custom-secondary shadow-elevation-xl items-center">
-      <div className="flex text-3xl text-custom-back font-bold mb-10">
+    <div className="flex flex-col responsive-padding bg-custom-secondary shadow-elevation-lg items-center">
+      <div className="flex responsive-title text-custom-back font-bold my-5 md:my-10 lg:my-10">
         PAPER APPLICATIONS
       </div>
-      <div className="grid grid-cols-6 gap-8">
+      <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 responsive-gap">
         {
           _.map(applicationsData, application => {
             return (
               <div
                 key={ application.id }
                 id={ application.id }
-                onClick={ () => navigate(`/products#${application.id}`) }
-                className="flex flex-col items-center cursor-pointer p-5 hover:bg-white text-white hover:text-custom-primary bg-custom-back shadow-elevation-xl rounded-2xl justify-between"
+                className="flex flex-col items-center cursor-pointer p-2 md:p-3 lg:p-5 hover:bg-white text-white hover:text-custom-primary bg-custom-back shadow-elevation-xl rounded-2xl justify-between"
               >
                 <div className="">{ application.icon }</div>
-                <div className="m-2 text-center font-medium">{ _.upperCase(application.name) }</div>
+                <div className="m-2 text-xs md:text-sm lg:text-base text-center font-medium">{ _.upperCase(application.name) }</div>
               </div>
             );
           })

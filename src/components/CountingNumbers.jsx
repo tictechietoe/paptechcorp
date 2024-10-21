@@ -46,7 +46,7 @@ const CountingNumbers = ({ targetNumber, duration }) => {
 
   return (
     <div ref={counterRef}>
-      <h2 className="text-3xl">{count}</h2>
+      <h2>{count}</h2>
     </div>
   );
 };

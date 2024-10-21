@@ -1,0 +1,45 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer components {
+  .responsive-icon {
+    @apply w-3 h-3 xs:w-10 xs:h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16;
+  }
+
+  .responsive-title {
+    @apply text-xs xs:text-base sm:text-lg md:text-xl lg:text-3xl;
+  }
+
+  .responsive-padding {
+    @apply p-2 xs:p-4 sm:p-6 md:p-8 lg:p-10;
+  }
+
+  .responsive-gap {
+    @apply gap-4 md:gap-8 lg:gap-8;
+  }
+
+  .responsive-label-margin {
+    @apply mb-1 sm:mb-1 md:mb-3 lg:mb-5;
+  }
+
+  .responsive-label {
+    @apply text-xs xs:text-xs sm:text-base md:text-lg lg:text-xl;
+  }
+
+  .responsive-text {
+    @apply text-xs xs:text-xs sm:text-sm md:text-base lg:text-lg;
+  }
+
+  .responsive-margin {
+    @apply m-5 md:m-7 lg:m-10;
+  }
+
+  .responsive-small-text {
+    @apply text-xs xs:text-xs sm:text-sm md:text-sm lg:text-base;
+  }
+
+  .responsive-small-icon {
+    @apply w-3 h-3 xs:w-5 xs:h-5 sm:w-7 sm:h-7 md:w-9 md:h-9 lg:w-10 lg:h-10;
+  }
+}

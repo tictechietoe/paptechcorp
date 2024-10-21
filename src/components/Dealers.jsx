@@ -79,36 +79,34 @@ const Dealers = () => {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col p-16 border-b border-dashed border-t border-custom-primary">
-        <div className="flex flex-col text-custom-back items-center mb-5">
-          <div className="text-3xl font-bold mb-5">
+      <div className="flex flex-col p-8 md:p-10 lg:p-12 border-b border-dashed border-t border-custom-primary">
+        <div className="flex flex-col text-custom-back items-center responsive-padding responsive-label-margin">
+          <div className="responsive-title font-bold">
             AUTHORIZED DEALERS FOR
           </div>
-          <div className="p-5 flex flex-col items-center">
-            <div className="text-xl mb-5">
+          <div className="flex flex-col items-center responsive-padding">
+            <div className="responsive-label lg:text-xl responsive-label-margin">
               ( for FBB / SBS / C2S / Bible Paper )
             </div>
-            <div className="flex justify-between">
-              <div className="flex items-center">
-                <img alt="asia pulp and paper company logo" width="300px" className="p-10 mx-5 hover:p-8" src={ appLogo } />
-                <div className="text-csutom-primary text-lg font-bold flex flex-col items-center">
-                  <div>ASIA PULP & PAPER COMPANY</div>
-                  <div>SINAR MAS GROUP (IMPORTED)</div>
-                </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 responsive-gap place-items-center">
+              <img alt="asia pulp and paper company logo" className="p-10 mx-5 hover:p-8 w-48 md:w-60 lg:w-72" src={ appLogo } />
+              <div className="text-custom-primary responsive-label font-bold">
+                <div>ASIA PULP & PAPER COMPANY</div>
+                <div>SINAR MAS GROUP (IMPORTED)</div>
               </div>
             </div>
           </div>
-          <div className="p-5 flex flex-col items-center border-t-2 border-dashed">
-            <div className="text-xl mb-5">
+          <div className="responsive-padding flex flex-col items-center border-t-2 border-dashed">
+            <div className="responsive-label lg:text-xl responsive-label-margin">
               ( for Greyback / Whiteback )
             </div>
-            <div className="flex justify-between">
+            <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-5 responsive-gap place-items-center">
               {
                 _.map(dealershipData, dealer => {
                   return (
                     <div className="flex flex-col items-center">
-                      <img alt={ dealer.alternative } width="300px" className="p-10 hover:p-2" src={ dealer.image } />
-                      <div className="text-csutom-primary text-lg font-bold flex flex-col items-center">{ dealer.name } </div>
+                      <img alt={ dealer.alternative } width="250px" className="responsive-padding hover:p-2" src={ dealer.image } />
+                      <div className="text-custom-primary responsive-label font-bold text-center">{ dealer.name } </div>
                     </div>
                   );
                 })
@@ -118,21 +116,21 @@ const Dealers = () => {
         </div>
       </div>
       <div className="flex flex-col p-16 border-b border-dashed border-t border-custom-primary">
-        <div className="flex flex-col text-custom-back items-center mb-5">
-          <div className="text-3xl font-bold mb-5">
+        <div className="flex flex-col text-custom-back items-center responsive-label-margin">
+          <div className="responsive-title font-bold responsive-label-margin">
             OUR STRATEGIC PARTNERSHIPS
           </div>
-          <div className="text-xl">
+          <div className="responsive-label">
             ( Imported and Local FBB / SBS )
           </div>
         </div>
-        <div className="flex justify-around">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 responsive-gap place-items-center">
           {
             _.map(partnershipData, partner => {
               return (
                 <div className="flex items-center">
                   <img alt={ partner.alternative } width={ partner.width } className="p-2 hover:p-0" src={ partner.image } />
-                  <div className="text-csutom-primary text-lg font-bold flex flex-col items-center text-center">{ partner.name } </div>
+                  <div className="text-custom-primary responsive-label font-bold flex flex-col items-center text-center">{ partner.name } </div>
                 </div>
               );
             })

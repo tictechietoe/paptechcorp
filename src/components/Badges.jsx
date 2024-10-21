@@ -26,25 +26,25 @@ const Badges = () => {
       number: 10,
       thousand: false,
       description: 'Years of Experience',
-      icon: <FaBusinessTime size={ 100 } />
+      icon: <FaBusinessTime className="responsive-icon" />
     },
     {
       number: 300,
       thousand: false,
       description: 'Traders and Customers Served Globally',
-      icon: <FaHandHoldingHand size={ 100 } />
+      icon: <FaHandHoldingHand className="responsive-icon" />
     },
     {
       number: 200,
       thousand: true,
       description: 'Amount of Paper Supplied (in Tonnes)',
-      icon: <PiToiletPaperFill size={ 100 } />
+      icon: <PiToiletPaperFill className="responsive-icon" />
     },
     {
       number: 13,
       thousand: false,
       description: 'Strategic Partners and Associated Dealers',
-      icon: <RiBuilding2Fill size={ 100 } />
+      icon: <RiBuilding2Fill className="responsive-icon" />
     },
   ];
 
@@ -53,58 +53,58 @@ const Badges = () => {
       number: 100,
       metric: 'MT/Day',
       description: 'Sheeting Capacity',
-      icon: <SiCloudflareworkers size={ 75 } />
+      icon: <SiCloudflareworkers className="responsive-icon" />
     },
     {
       number: 50,
       metric: '',
       description: 'Total Warehouse workers',
-      icon: <GrUserWorker size={ 75 } />
+      icon: <GrUserWorker className="responsive-icon" />
     },
     {
       number: 80000,
       metric: 'Sqft',
       description: 'Total Warehousing Facility',
-      icon: <PiWarehouseFill size={ 75 } />
+      icon: <PiWarehouseFill className="responsive-icon" />
     },
     {
       number: 10,
       metric: '',
       description: 'Delivey Trucks',
-      icon: <FaTruck size={ 75 } />
+      icon: <FaTruck className="responsive-icon" />
     },
   ];
 
   return (
     <div>
-      <div className="grid grid-cols-4 p-10 bg-custom-nav-color shadow-lg">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 responsive-padding bg-custom-nav-color shadow-lg">
         {
           _.map(badgesData, badge => {
             return (
               <div className="p-5 flex flex-col items-center">
-                <div className="text-custom-secondary p-10 m-2 shadow-lg hover:border-custom-secondary rounded-full border-4">
+                <div className="text-custom-secondary responsive-padding m-2 shadow-lg hover:border-custom-secondary rounded-full border-4">
                   { badge.icon }
                 </div>
                 <div className="flex text-custom-primary items-center text-3xl font-bold">
                   <span><CountingNumbers targetNumber={ badge.number } duration={ duration } /></span>
                   <span>{ badge.thousand ? 'K' : ''}+</span>
                 </div>
-                <div className="text-custom-back text-center text-pretty">{ badge.description }</div>
+                <div className="text-custom-back responsive-text text-center text-pretty">{ badge.description }</div>
               </div>
             );
           })
         }
       </div>
-      <div className="flex flex-col p-10 m-10 bg-custom-back rounded-3xl shadow-elevation-xl">
-        <div className="flex justify-center text-3xl font-bold text-custom-secondary">OUR DAILY STRENGTH</div>
-        <div className="grid grid-cols-4">
+      <div className="flex flex-col p-5 md:p-7 lg:p-10 responsive-margin bg-custom-back rounded-3xl shadow-elevation-xl">
+        <div className="flex justify-center responsive-title font-bold text-custom-secondary">OUR DAILY STRENGTH</div>
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4">
           {
             _.map(strengthData, strength => {
               return (
-                <div className="p-10 flex flex-col items-center">
-                  <div className="text-white h-16 text-center text-pretty">{ _.upperCase(strength.description) }</div>
+                <div className="responsive-padding grid grid-rows-3 place-items-center">
+                  <div className="text-white responsive-text text-center text-pretty">{ _.upperCase(strength.description) }</div>
                   <div className="text-custom-secondary m-2">{ strength.icon }</div>
-                  <div className="flex text-custom-pastel-blue items-center text-3xl font-medium">
+                  <div className="flex text-custom-pastel-blue items-center font-medium text-base md:text-xl lg:text-3xl">
                     <span className="mr-2"><CountingNumbers targetNumber={ strength.number } duration={ duration } /></span>
                     <span>{ strength.metric }</span>
                   </div>

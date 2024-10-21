@@ -48,7 +48,7 @@ const Home = () => {
     <div>
       <ImageCarousel images={images} textContent={ textContent }/>
       <Quote
-        icon={ <FaInfinity size={ 75 } /> }
+        icon={ <FaInfinity className="responsive-icon" /> }
         iconColor="custom-secondary"
         textColor="custom-tertiary"
         message="Paper may be thin, but it can build strong bridges between businesses and their customers. Similarly Relationships in bussiness are like well-crafted paper, require care, attention, and a foundation of trust."
