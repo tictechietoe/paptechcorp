@@ -55,29 +55,29 @@ const ContactInfo = () => {
     {
       title: 'Offices',
       number: 2,
-      logo: <RiHomeOfficeFill size={ 50 } />
+      logo: <RiHomeOfficeFill size={50} />
     },
     {
       title: 'Warehouses',
       number: 2,
-      logo: <PiWarehouseBold size={ 50 } />
+      logo: <PiWarehouseBold size={50} />
     },
     {
       title: 'Salesmen',
       number: 5,
-      logo: <RiCustomerServiceFill size={ 50 } />
+      logo: <RiCustomerServiceFill size={50} />
     },
     {
       title: 'Accountants',
       number: 5,
-      logo: <MdOutlineContactPhone size={ 50 } />
+      logo: <MdOutlineContactPhone size={50} />
     },
   ];
 
   return (
     <div>
       <BannerImage
-        image={ contact }
+        image={contact}
         title="CONTACT US"
         fromText="Home"
         fromLink="/"
@@ -89,17 +89,17 @@ const ContactInfo = () => {
             _.map(overviewData, overview => {
               return (
                 <div className="flex flex-col justify-center items-center rounded-2xl hover:bg-custom-nav-color m-2 p-5 border-2">
-                  <div className="text-custom-back font-bold responsive-title">{ overview.title }</div>
-                  <div className="text-custom-secondary responsive-icon">{ overview.logo }</div>
+                  <div className="text-custom-back font-bold responsive-title">{overview.title}</div>
+                  <div className="text-custom-secondary responsive-icon">{overview.logo}</div>
                   <div className="text-custom-primary font-medium text-lg md:text-xl lg:text-2xl">
                     <CountingNumbers
-                      targetNumber={ overview.number }
-                      duration={ overviewNumbersDuration }
+                      targetNumber={overview.number}
+                      duration={overviewNumbersDuration}
                     />
                   </div>
                   <div className="flex flex-col">
                     {
-                      _.map(overview.list, item => <div className="font-medium">{ item }</div>)
+                      _.map(overview.list, item => <div className="font-medium">{item}</div>)
                     }
                   </div>
                 </div>
@@ -108,11 +108,11 @@ const ContactInfo = () => {
           }
         </div>
         <div className="responsive-padding">
-          <div className="grid grid-cols-3 place-items-center responsive-gap responsive-padding bg-custom-primary rounded-xl shadow-elevation-lg text-custom-secondary flex justify-evenly">
+          <div className="grid grid-cols-3 place-items-center responsive-gap responsive-padding bg-custom-primary rounded-xl shadow-elevation-lg text-custom-secondary justify-evenly">
             <div className="col-span-1 row-span-2 responsive-text font-bold text-wrap">FOR QUALITY GRIVIENCE</div>
             <div className="col-span-2 text-white font-medium text-wrap">
               <a
-                href={ `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=indenting@paptechcorp.in` }
+                href={`https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=indenting@paptechcorp.in`}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -134,16 +134,16 @@ const ContactInfo = () => {
                 <div className="responsive-padding grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 responsive-gap">
                   <div className="grid grid-rows-4 col-span-1 responsive-gap">
                     <div className="row-span-2 flex flex-col justify-evenly bg-custom-primary text-white p-2 rounded-lg shadow-lg">
-                      <p className="font-extrabold">{ _.upperCase(office.name) }</p>
-                      <p className="text-custom-secondary font-medium">[ { _.upperCase(office.designation) } ]</p>
-                      <p className="responsive-text">{ office.location }</p>
+                      <p className="font-extrabold">{_.upperCase(office.name)}</p>
+                      <p className="text-custom-secondary font-medium">[ {_.upperCase(office.designation)} ]</p>
+                      <p className="responsive-text">{office.location}</p>
                     </div>
                     <div className="bg-custom-secondary text-white p-2 rounded-lg shadow-lg">
                       <p className="font-extrabold">CONTACT NUMBER</p>
                       {
                         _.map(office.contacts, contact => {
                           return (
-                            <div><a href={ `tel:${contact}` }>+91 { contact }</a></div>
+                            <div><a href={`tel:${contact}`}>+91 {contact}</a></div>
                           );
                         })
                       }
@@ -155,11 +155,11 @@ const ContactInfo = () => {
                           return (
                             <div>
                               <a
-                                href={ `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${email}` }
+                                href={`https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${email}`}
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                { email }
+                                {email}
                               </a>
                             </div>
                           );
@@ -170,7 +170,7 @@ const ContactInfo = () => {
                   <div className="m-5 border-4 col-span-1 md:col-span-3 lg:col-span-3 rounded-2xl">
                     <iframe
                       title="Google Maps Location"
-                      src={ office.src }
+                      src={office.src}
                       width="100%"
                       height="400"
                       className="border rounded-lg shadow-lg shadow-gray-500"
@@ -192,16 +192,16 @@ const ContactInfo = () => {
                 <div className="responsive-padding grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 responsive-gap">
                   <div className="grid grid-rows-4 col-span-1 responsive-gap">
                     <div className="row-span-2 bg-custom-primary flex flex-col justify-evenly text-white p-2 rounded-lg shadow-lg">
-                      <p className="font-extrabold ">{ _.upperCase(warehouse.name) }</p>
-                      <p className="text-custom-secondary font-medium">[ { _.upperCase(warehouse.designation) } ]</p>
-                      <p className="responsive-text">{ warehouse.location }</p>
+                      <p className="font-extrabold ">{_.upperCase(warehouse.name)}</p>
+                      <p className="text-custom-secondary font-medium">[ {_.upperCase(warehouse.designation)} ]</p>
+                      <p className="responsive-text">{warehouse.location}</p>
                     </div>
                     <div className="bg-custom-secondary text-white p-2 rounded-lg shadow-lg">
                       <p className="font-extrabold ">CONTACT NUMBER</p>
                       {
                         _.map(warehouse.contacts, contact => {
                           return (
-                            <div><a href={ `tel:${contact}` }>+91 { contact }</a></div>
+                            <div><a href={`tel:${contact}`}>+91 {contact}</a></div>
                           );
                         })
                       }
@@ -213,11 +213,11 @@ const ContactInfo = () => {
                           return (
                             <div>
                               <a
-                                href={ `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${email}` }
+                                href={`https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${email}`}
                                 target="_blank"
                                 rel="noreferrer"
                               >
-                                { email }
+                                {email}
                               </a>
                             </div>
                           );
@@ -228,7 +228,7 @@ const ContactInfo = () => {
                   <div className="m-5 border-4 col-span-1 md:col-span-3 lg:col-span-3 rounded-2xl">
                     <iframe
                       title="Google Maps Location"
-                      src={ warehouse.src }
+                      src={warehouse.src}
                       width="100%"
                       height="400"
                       className="border rounded-lg shadow-lg shadow-gray-500"

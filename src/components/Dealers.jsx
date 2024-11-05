@@ -21,7 +21,7 @@ const Dealers = () => {
         <div>INDUSTRIES LIMITED (LOCAL)</div>
       </>,
       alternative: 'jk paper limited industries limited logo',
-      width: '150px',
+      width: '125px',
     },
     {
       image: cmpcLogo,
@@ -89,7 +89,7 @@ const Dealers = () => {
               ( for FBB / SBS / C2S / Bible Paper )
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 responsive-gap place-items-center">
-              <img alt="asia pulp and paper company logo" className="p-10 mx-5 hover:p-8 w-48 md:w-60 lg:w-72" src={ appLogo } />
+              <img alt="asia pulp and paper company logo" className="p-10 mx-5 hover:p-8 w-48 md:w-60 lg:w-72" src={appLogo} />
               <div className="text-custom-primary responsive-label font-bold">
                 <div>ASIA PULP & PAPER COMPANY</div>
                 <div>SINAR MAS GROUP (IMPORTED)</div>
@@ -105,8 +105,8 @@ const Dealers = () => {
                 _.map(dealershipData, dealer => {
                   return (
                     <div className="flex flex-col items-center">
-                      <img alt={ dealer.alternative } width="250px" className="responsive-padding hover:p-2" src={ dealer.image } />
-                      <div className="text-custom-primary responsive-label font-bold text-center">{ dealer.name } </div>
+                      <img alt={dealer.alternative} width="250px" className="responsive-padding hover:p-2" src={dealer.image} />
+                      <div className="text-custom-primary responsive-label font-bold text-center">{dealer.name} </div>
                     </div>
                   );
                 })
@@ -128,9 +128,9 @@ const Dealers = () => {
           {
             _.map(partnershipData, partner => {
               return (
-                <div className="flex items-center">
-                  <img alt={ partner.alternative } width={ partner.width } className="p-2 hover:p-0" src={ partner.image } />
-                  <div className="text-custom-primary responsive-label font-bold flex flex-col items-center text-center">{ partner.name } </div>
+                <div className="grid grid-cols-2 place-items-center">
+                  <img alt={partner.alternative} width={partner.width} className="p-2 hover:p-0" src={partner.image} />
+                  <div className="text-custom-primary responsive-label font-bold flex flex-col items-center text-center">{partner.name} </div>
                 </div>
               );
             })

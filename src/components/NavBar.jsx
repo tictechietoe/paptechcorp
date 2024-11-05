@@ -3,18 +3,18 @@ import React, { useState } from 'react';
 import _ from 'lodash';
 import { Link } from 'react-router-dom';
 import { RiTeamFill } from "react-icons/ri";
-import { FaHome, FaWpforms, FaBars, FaTimes } from "react-icons/fa";
+import { FaHome, FaWpforms, FaBars } from "react-icons/fa";
 import { PiPhoneCallFill } from "react-icons/pi";
+import { MdPrivacyTip } from "react-icons/md";
+import { IoDocumentTextSharp } from "react-icons/io5";
+
+
 import Logo from './Logo';
 
 
 const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   const navbarContent = [
     {
@@ -36,6 +36,16 @@ const Navbar = () => {
       title: 'CONTACT US',
       to: '/contact',
       icon: <PiPhoneCallFill size={20} />
+    },
+    {
+      title: 'TERMS & CONDITIONS',
+      to: '/terms_conditions',
+      icon: <IoDocumentTextSharp size={20} />
+    },
+    {
+      title: 'PRIVACY POLICY',
+      to: '/privacy_policy',
+      icon: <MdPrivacyTip size={20} />
     }
   ];
 
@@ -62,15 +72,15 @@ const Navbar = () => {
     <nav>
       <div className="flex items-center justify-between sticky top-0 z-30 bg-custom-nav-color drop-shadow-lg">
         <Logo />
-        <div className="px-10 text-custom-secondary md:hidden lg:hidden">
+        <div className="px-10 text-custom-secondary lg:hidden">
           <div
             className="hover:bg-custom-secondary hover:text-white p-1 curosr-pointer"
-            onClick={ () => setIsMenuOpen(!isMenuOpen) }
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <FaBars size={ 20 } />
+            <FaBars size={20} />
           </div>
         </div>
-        <div className="hidden md:flex lg:flex flex-col items-center">
+        <div className="hidden md:hidden lg:flex flex-col items-center">
           <div className="flex flex-1 font-medium text-sm flex-wrap">
             {
               _.map(navbarContent, content => navItem(content))
@@ -80,7 +90,7 @@ const Navbar = () => {
       </div>
       {
         isMenuOpen &&
-        <div className="my-5 flex flex-col font-medium text-sm flex-wrap">
+        <div className="my-5 grid md:grid-cols-2 sm:grid-cols-1 font-medium text-sm flex-wrap">
           {
             _.map(navbarContent, content => navItem(content))
           }
