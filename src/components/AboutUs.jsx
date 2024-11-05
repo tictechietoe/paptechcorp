@@ -7,17 +7,17 @@ const AboutUs = () => {
 
   const navigate = useNavigate();
 
-return (
+  return (
     <div className="bg-custom-back responsive-padding flex flex-col items-center">
       <div className="responsive-title font-bold text-white p-5">ABOUT US</div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
         <div className="flex flex-col justify-around items-center basis-1/4">
-          <div className="flex-1"><img alt="about us founders" src={ founders } /></div>
+          <div className="flex-1"><img alt="about us founders" src={founders} /></div>
           <div className="flex-1 mt-5 text-white text-center">Palak Gala and Rushabh Savla - Team Paptech</div>
         </div>
         <div className="flex flex-col items-center text-custom-secondary text-center font-medium tex-2xl basis-3/4 my-5 mx-5 md:mx-10 lg:mx-10">
           <div className="mb-5 font-semibold text-white">
-            Pap tech Sales Corporation and Prabhat paper mart have merged into Paptech Corp Pvt. Ltd. from FY 2024.
+            Pap Tech Sales Corporation and Prabhat Paper Mart have merged into Paptech Corp Pvt. Ltd. from FY 2024.
           </div>
           <div className="mb-5">
             Paptech Corp Pvt. Ltd. is a leading distributor in the packaging boards industry, known for its strong partnerships and innovative solutions. With a focus on sustainable growth and profitability, Paptech aims to reshape the industry through strategic global partnerships and cutting-edge technology.
@@ -33,11 +33,11 @@ return (
               Check us out here !
             </a>
           </div>
-            <button
-              className="mb-3 rounded-md bg-custom-secondary text-custom-primary px-2 py-1 font-medium hover:text-white hover:cursor-pointer"
-              onClick={ () => navigate(`/aboutus`) }
-            >
-              Read More
+          <button
+            className="mb-3 rounded-md bg-custom-secondary text-custom-primary px-2 py-1 font-medium hover:text-white hover:cursor-pointer"
+            onClick={() => navigate(`/aboutus`)}
+          >
+            Read More
           </button>
         </div>
       </div>

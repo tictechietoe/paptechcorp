@@ -6,10 +6,10 @@ import appPgae2 from '../assets/images/appPage2.jpg';
 
 const StoreLabel = ({ icon, priamryText, secondaryText }) => (
   <div className="grid grid-cols-4 bg-black placed-items-center rounded-2xl p-1 m-1">
-    <div className="m-1 col-span-1">{ icon }</div>
+    <div className="m-1 col-span-1">{icon}</div>
     <div className="flex flex-col col-span-3 justify-center items-center text-white mx-1">
-      <div className="responsive-small-text">{ secondaryText }</div>
-      <div className="responsive-small-text font-bold">{ priamryText }</div>
+      <div className="responsive-small-text">{secondaryText}</div>
+      <div className="responsive-small-text font-bold">{priamryText}</div>
     </div>
   </div>
 );
@@ -32,20 +32,20 @@ const TechnologicalInnovations = () => {
               <StoreLabel
                 priamryText="App Store"
                 secondaryText="Download on the"
-                icon={ <FaApple className="responsive-small-icon" /> }
+                icon={<FaApple className="responsive-small-icon" />}
               />
               <StoreLabel
                 priamryText="Google Play"
                 secondaryText="GET IT ON"
-                icon={ <FaGooglePlay className="responsive-small-icon" /> }
+                icon={<FaGooglePlay className="responsive-small-icon" />}
               />
             </div>
           </div>
           <div className="col-span-1 row-span-1 md:col-span-1 md:row-span-1 md:row-start-2 lg:col-span-1 lg:row-span-2">
-            <img alt="applicaiton page 1" src={ appPgae1 } />
+            <img alt="applicaiton page 1" src={appPgae1} />
           </div>
           <div className="col-span-1 row-span-1 md:col-span-1 md:row-span-1 md:row-start-2 lg:col-span-1 lg:row-span-2">
-            <img alt="applicaiton page 2" src={ appPgae2 } />
+            <img alt="applicaiton page 2" src={appPgae2} />
           </div>
           <div className="col-span-2 row-span-2 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2">
             <div className="p-3 md:p-4 lg:p-5 responsive-text">

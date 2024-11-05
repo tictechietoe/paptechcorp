@@ -13,46 +13,46 @@ const Team = () => {
 
   const teamMembers = [
     {
-      name: "Palak Gala",
-      designation: "Co Owner",
-      image: <IoIosPerson size={ 200 } className="bg-custom-secondary w-72" />,
-      email: 'palak.gala@paptechcorp.in',
-      phone: '8879874369',
-    },
-    {
       name: "Dwip Gala",
       designation: "Co Owner",
-      image: <IoIosPerson size={ 200 } className="bg-custom-secondary w-72" />,
+      image: <IoIosPerson size={200} className="bg-custom-secondary w-72" />,
       email: 'dwip.gala@paptechcorp.in',
       phone: '8080609658',
     },
     {
-      name: "Rushabh Savla",
+      name: "Palak Gala",
       designation: "Co Owner",
-      image: <IoIosPerson size={ 200 } className="bg-custom-secondary w-72" />,
-      email: 'rushabh.savla@paptechcorp.in',
-      phone: '7977264558',
+      image: <IoIosPerson size={200} className="bg-custom-secondary w-72" />,
+      email: 'palak.gala@paptechcorp.in',
+      phone: '8879874369',
     },
     {
       name: "Pritesh Shah",
       designation: "Co Owner",
-      image: <IoIosPerson size={ 200 } className="bg-custom-secondary w-72" />,
+      image: <IoIosPerson size={200} className="bg-custom-secondary w-72" />,
       email: 'Pritesh.shah@paptechcorp.in',
       phone: '9820058760',
+    },
+    {
+      name: "Rushabh Savla",
+      designation: "Co Owner",
+      image: <IoIosPerson size={200} className="bg-custom-secondary w-72" />,
+      email: 'rushabh.savla@paptechcorp.in',
+      phone: '7977264558',
     }
   ];
 
   return (
     <div>
       <BannerImage
-        image={ teamImage }
+        image={teamImage}
         title="TEAM"
         fromText="Home"
         fromLink="/"
         toText="Team"
       />
       <Quote
-        icon={ <FaPeopleGroup size={ 50 } /> }
+        icon={<FaPeopleGroup size={50} />}
         iconColor="custom-secondary"
         textColor="custom-primary"
         message="The strength of a team is each individual member, the strength of each member is the team"
@@ -73,7 +73,7 @@ const Team = () => {
         </div>
       </div>
 
-      
+
     </div>
   );
 };
